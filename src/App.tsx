@@ -1,12 +1,14 @@
 import "./App.css";
 
-import { CreateTemplate } from "./CreateTemplate/CreateTemplate";
+import { CreateTemplateCells } from "./CreateTemplateCells/CreateTemplateCells";
+import { CreteTemplateFields } from "./CreteTemplateFields/CreteTemplateFields";
 
 function App() {
   return (
     <div>
       <h1>Sprint 1</h1>
-      <CreateTemplate />
+      <CreateTemplateCells />
+      <CreteTemplateFields />
     </div>
   );
 }

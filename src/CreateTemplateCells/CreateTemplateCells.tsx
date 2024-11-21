@@ -4,7 +4,7 @@ import download from "downloadjs";
 import pdfBase from "../assets/pdf/donors/wzorzec_1strona.pdf";
 import { drawFirstPageFields } from "../drawFields/firstPage/drawFirstPageFields";
 
-export const CreateTemplate = () => {
+export const CreateTemplateCells = () => {
   const handleOnClick = async () => {
     const pdfBaseBytes = await fetch(pdfBase).then((res) => res.arrayBuffer());
     const pdfDoc = await PDFDocument.load(pdfBaseBytes);
@@ -14,12 +14,13 @@ export const CreateTemplate = () => {
 
     drawFirstPageFields(firstPage, form);
 
-    const fields = form.getFields();
-    fields.map((field) => {
-      console.log(field.getName());
-    });
+    // const fields = form.getFields();
 
-    download(await pdfDoc.save(), "new.pdf", "application/pdf");
+    // fields.map((field) => {
+    //   console.log(field.getName());
+    // });
+
+    // download(await pdfDoc.save(), "new.pdf", "application/pdf");
   };
 
   return (
