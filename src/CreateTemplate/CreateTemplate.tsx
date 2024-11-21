@@ -1,7 +1,7 @@
 import { PDFDocument } from "pdf-lib";
 import download from "downloadjs";
 
-import pdfBase from "../assets/wzorzec_1strona.pdf";
+import pdfBase from "../assets/pdf/donors/wzorzec_1strona.pdf";
 import { drawFirstPageFields } from "../drawFields/firstPage/drawFirstPageFields";
 
 export const CreateTemplate = () => {
