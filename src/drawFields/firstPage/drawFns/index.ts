@@ -1,4 +1,4 @@
-import { addCellFields } from "./utils/addCellFields";
+import { addCellFields } from "../../utils/addCellFields";
 import { drawSubmittingCity } from "./drawSubmittingCityField";
 import { drawDateFields } from "./drawDateFields";
 import { drawWojewodaField } from "./drawWojewodaField";

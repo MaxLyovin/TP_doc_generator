@@ -3,18 +3,7 @@ import { PDFDocument } from "pdf-lib";
 import download from "downloadjs";
 
 import pdfBase from "./assets/wzorzec_1strona.pdf";
-
-import {
-  drawSubmittingCity,
-  drawDateFields,
-  drawWojewodaField,
-  drawSurnameFields,
-  drawPreviousSurnameFields,
-  drawFamilyNameFields,
-  drawNameFields,
-  drawPreviousName,
-  drawFatherName,
-} from "./drawFields";
+import { drawFirstPageFields } from "./drawFields/firstPage/drawFirstPageFields";
 
 function App() {
   const handleOnClick = async () => {
@@ -32,15 +21,7 @@ function App() {
 
     console.log(width, height);
 
-    drawSubmittingCity(firstPage, form);
-    drawDateFields(firstPage, form);
-    drawWojewodaField(firstPage, form);
-    drawSurnameFields(firstPage, form);
-    drawPreviousSurnameFields(firstPage, form);
-    drawFamilyNameFields(firstPage, form);
-    drawNameFields(firstPage, form);
-    drawPreviousName(firstPage, form);
-    drawFatherName(firstPage, form);
+    drawFirstPageFields(firstPage, form);
 
     const fields = form.getFields();
     console.log(fields);

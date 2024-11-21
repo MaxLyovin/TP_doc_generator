@@ -1,5 +1,5 @@
 import { PDFPage, PDFForm } from "pdf-lib";
-import { addCellFields } from "./utils/addCellFields";
+import { addCellFields } from "../../utils/addCellFields";
 
 export const drawFatherName = (page: PDFPage, form: PDFForm) => {
   addCellFields({
