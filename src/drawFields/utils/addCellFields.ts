@@ -1,4 +1,5 @@
 import { PDFPage, PDFForm } from "pdf-lib";
+import { getCellName } from "./getCellName";
 
 type StartPoint = {
   x: number;
@@ -25,9 +26,12 @@ export const addCellFields = ({
   cellsSpacing,
 }: AddFieldCielsArgs) => {
   let xStartPosition = startPoint.x;
+  const cellsNameList = [];
+
+  const cellsSpacingBase = cellsSpacing;
 
   for (let cellIndex = 0; cellIndex < cellsAmount; cellIndex++) {
-    const cell = form.createTextField(`${nameBase}_${cellIndex}`);
+    const cell = form.createTextField(getCellName(nameBase, cellIndex));
 
     cell.addToPage(page, {
       x: xStartPosition,
@@ -38,6 +42,7 @@ export const addCellFields = ({
       borderColor: undefined,
     });
 
-    xStartPosition = xStartPosition + cellsSpacing;
+    xStartPosition = xStartPosition + cellsSpacingBase;
+    cellsNameList.push(cell.getName());
   }
 };

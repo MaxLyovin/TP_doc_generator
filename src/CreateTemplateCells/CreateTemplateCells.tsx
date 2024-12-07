@@ -14,13 +14,7 @@ export const CreateTemplateCells = () => {
 
     drawFirstPageFields(firstPage, form);
 
-    // const fields = form.getFields();
-
-    // fields.map((field) => {
-    //   console.log(field.getName());
-    // });
-
-    // download(await pdfDoc.save(), "new.pdf", "application/pdf");
+    download(await pdfDoc.save(), "new.pdf", "application/pdf");
   };
 
   return (
