@@ -1,7 +1,7 @@
 import { PDFPage, PDFForm } from "pdf-lib";
 import { drawDateFields } from "../../../../../utils/drawDateFields";
 
-export const drawDate = (page: PDFPage, form: PDFForm) => {
+export const drawSubmittingDate = (page: PDFPage, form: PDFForm) => {
   drawDateFields({
     page,
     form,

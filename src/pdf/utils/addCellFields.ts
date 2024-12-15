@@ -11,7 +11,7 @@ type AddFieldCielsArgs = {
   form: PDFForm;
   startPoint: StartPoint;
   dimension: number;
-  cellsAmount: number;
+  cellsAmount?: number;
   cellsSpacing: number;
   nameBase: string;
   indexShift?: number;
@@ -27,13 +27,14 @@ export const addCellFields = ({
   nameBase,
   startPoint,
   dimension,
-  cellsAmount,
+  cellsAmount = 1,
   indexShift = 0,
   cellsSpacing,
   cellsCorrection,
 }: AddFieldCielsArgs) => {
   let xStartPosition = startPoint.x;
   const cellsNameList = [];
+  const isSingleCell = cellsAmount === 1;
 
   let cellsSpacingBase = cellsSpacing;
 
@@ -42,7 +43,9 @@ export const addCellFields = ({
     cellIndex < cellsAmount + indexShift;
     cellIndex++
   ) {
-    const cell = form.createTextField(getCellName(nameBase, cellIndex));
+    const cell = form.createTextField(
+      getCellName(nameBase, cellIndex, isSingleCell)
+    );
     cell.setAlignment(TextAlignment.Center);
 
     cell.addToPage(page, {

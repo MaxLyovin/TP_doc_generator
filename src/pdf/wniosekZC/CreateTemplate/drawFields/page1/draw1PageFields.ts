@@ -2,7 +2,7 @@ import { PDFPage, PDFForm } from "pdf-lib";
 
 import {
   drawSubmittingCity,
-  drawDate,
+  drawSubmittingDate,
   drawWojewodaField,
   drawSurnameFields,
   drawPreviousSurnameFields,
@@ -14,7 +14,7 @@ import {
 
 export const draw1PageFields = (page: PDFPage, form: PDFForm) => {
   drawSubmittingCity(page, form);
-  drawDate(page, form);
+  drawSubmittingDate(page, form);
   drawWojewodaField(page, form);
   drawSurnameFields(page, form);
   drawPreviousSurnameFields(page, form);

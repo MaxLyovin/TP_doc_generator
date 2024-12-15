@@ -1,4 +1,7 @@
 const separator = "_";
 
-export const getCellName = (nameBase: string, cellIndex: number) =>
-  `${nameBase}${separator}${cellIndex}`;
+export const getCellName = (
+  nameBase: string,
+  cellIndex: number,
+  isSingleCell = false
+) => (isSingleCell ? nameBase : `${nameBase}${separator}${cellIndex}`);
