@@ -1,5 +1,6 @@
 import { PDFPage, PDFForm } from "pdf-lib";
-import { addCellFields } from "../../utils/addCellFields";
+import { addCellFields } from "../../../../../utils/addCellFields";
+import { correctionFor20Cells } from "../../../../constants/corrections";
 
 export const drawFamilyNameFields = (page: PDFPage, form: PDFForm) => {
   addCellFields({
@@ -10,5 +11,6 @@ export const drawFamilyNameFields = (page: PDFPage, form: PDFForm) => {
     cellsAmount: 20,
     cellsSpacing: 18,
     nameBase: "familyName",
+    cellsCorrection: correctionFor20Cells,
   });
 };

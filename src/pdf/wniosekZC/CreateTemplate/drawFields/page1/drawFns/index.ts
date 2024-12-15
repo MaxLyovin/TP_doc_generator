@@ -1,6 +1,5 @@
-import { addCellFields } from "../../utils/addCellFields";
 import { drawSubmittingCity } from "./drawSubmittingCityField";
-import { drawDateFields } from "./drawDateFields";
+import { drawDate } from "./drawDate";
 import { drawWojewodaField } from "./drawWojewodaField";
 import { drawSurnameFields } from "./drawSurnameFields";
 import { drawPreviousSurnameFields } from "./drawPreviousSurnameFields";
@@ -10,9 +9,8 @@ import { drawPreviousName } from "./drawPreviousName";
 import { drawFatherName } from "./drawFatherName";
 
 export {
-  addCellFields,
   drawSubmittingCity,
-  drawDateFields,
+  drawDate,
   drawWojewodaField,
   drawSurnameFields,
   drawPreviousSurnameFields,

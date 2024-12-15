@@ -1,5 +1,6 @@
 import { PDFPage, PDFForm } from "pdf-lib";
-import { addCellFields } from "../../utils/addCellFields";
+import { addCellFields } from "../../../../../utils/addCellFields";
+import { correctionFor20Cells } from "../../../../constants/corrections";
 
 export const drawNameFields = (page: PDFPage, form: PDFForm) => {
   addCellFields({
@@ -10,6 +11,7 @@ export const drawNameFields = (page: PDFPage, form: PDFForm) => {
     cellsAmount: 20,
     cellsSpacing: 18,
     nameBase: "name",
+    cellsCorrection: correctionFor20Cells,
   });
 
   addCellFields({
@@ -19,6 +21,8 @@ export const drawNameFields = (page: PDFPage, form: PDFForm) => {
     dimension: 14,
     cellsAmount: 20,
     cellsSpacing: 18,
-    nameBase: "name--SecondLine",
+    nameBase: "name",
+    indexShift: 20,
+    cellsCorrection: correctionFor20Cells,
   });
 };

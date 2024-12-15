@@ -1,5 +1,6 @@
 import { PDFPage, PDFForm } from "pdf-lib";
-import { addCellFields } from "../../utils/addCellFields";
+import { addCellFields } from "../../../../../utils/addCellFields";
+import { correctionFor20Cells } from "../../../../constants/corrections";
 
 export const drawPreviousName = (page: PDFPage, form: PDFForm) => {
   addCellFields({
@@ -10,6 +11,7 @@ export const drawPreviousName = (page: PDFPage, form: PDFForm) => {
     cellsAmount: 20,
     cellsSpacing: 18,
     nameBase: "previousName",
+    cellsCorrection: correctionFor20Cells,
   });
 
   addCellFields({
@@ -19,6 +21,8 @@ export const drawPreviousName = (page: PDFPage, form: PDFForm) => {
     dimension: 14,
     cellsAmount: 20,
     cellsSpacing: 18,
-    nameBase: "previousName--SecondLine",
+    nameBase: "previousName",
+    indexShift: 20,
+    cellsCorrection: correctionFor20Cells,
   });
 };

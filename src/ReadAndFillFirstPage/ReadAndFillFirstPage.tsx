@@ -1,6 +1,6 @@
 import { PDFDocument } from "pdf-lib";
 import download from "downloadjs";
-import { getCellName } from "../drawFields/utils/getCellName";
+import { getCellName } from "../pdf/utils/getCellName";
 import fontkit from "@pdf-lib/fontkit";
 
 import { Input } from "../components/form/Input";

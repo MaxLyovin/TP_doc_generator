@@ -1,7 +1,7 @@
-import { PDFPage, PDFForm } from "pdf-lib";
+import { PDFPage, PDFForm, TextAlignment } from "pdf-lib";
 import { getCellName } from "./getCellName";
 
-type StartPoint = {
+export type StartPoint = {
   x: number;
   y: number;
 };
@@ -14,6 +14,11 @@ type AddFieldCielsArgs = {
   cellsAmount: number;
   cellsSpacing: number;
   nameBase: string;
+  indexShift?: number;
+  cellsCorrection?: {
+    each: number;
+    correction: number;
+  };
 };
 
 export const addCellFields = ({
@@ -23,15 +28,22 @@ export const addCellFields = ({
   startPoint,
   dimension,
   cellsAmount,
+  indexShift = 0,
   cellsSpacing,
+  cellsCorrection,
 }: AddFieldCielsArgs) => {
   let xStartPosition = startPoint.x;
   const cellsNameList = [];
 
-  const cellsSpacingBase = cellsSpacing;
+  let cellsSpacingBase = cellsSpacing;
 
-  for (let cellIndex = 0; cellIndex < cellsAmount; cellIndex++) {
+  for (
+    let cellIndex = indexShift;
+    cellIndex < cellsAmount + indexShift;
+    cellIndex++
+  ) {
     const cell = form.createTextField(getCellName(nameBase, cellIndex));
+    cell.setAlignment(TextAlignment.Center);
 
     cell.addToPage(page, {
       x: xStartPosition,
@@ -42,7 +54,17 @@ export const addCellFields = ({
       borderColor: undefined,
     });
 
+    if (
+      cellsCorrection &&
+      cellIndex !== 0 &&
+      cellIndex % cellsCorrection.each === 0
+    ) {
+      cellsSpacingBase = cellsSpacingBase + cellsCorrection.correction;
+    }
+
     xStartPosition = xStartPosition + cellsSpacingBase;
     cellsNameList.push(cell.getName());
   }
+
+  return { xEnd: xStartPosition };
 };
