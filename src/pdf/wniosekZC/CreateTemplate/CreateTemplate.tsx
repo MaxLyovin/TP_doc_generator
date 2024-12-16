@@ -1,27 +1,48 @@
 import { PDFDocument } from "pdf-lib";
 import download from "downloadjs";
-
+import fontkit from "@pdf-lib/fontkit";
 import pdfBase from "../assets/wniosek.donor.pdf";
+import fontBase from "../../../assets/fonts/Ubuntu-R.ttf";
 import { draw1PageFields } from "./drawFields/page1/draw1PageFields";
 import { draw2PageFields } from "./drawFields/page2/draw2PageFields";
+import { draw3PageFields } from "./drawFields/page3/draw3PageFields";
+import { draw4PageFields } from "./drawFields/page4/draw4PageFields";
 
 export const CreateTemplate = () => {
   const handleOnClick = async () => {
+    const ubuntuFontBytes = await fetch(fontBase).then((res) =>
+      res.arrayBuffer()
+    );
     const pdfBaseBytes = await fetch(pdfBase).then((res) => res.arrayBuffer());
     const pdfDoc = await PDFDocument.load(pdfBaseBytes);
+
+    pdfDoc.registerFontkit(fontkit);
+    const ubuntuFont = await pdfDoc.embedFont(ubuntuFontBytes);
+
     const pages = pdfDoc.getPages();
     const form = pdfDoc.getForm();
     const page1 = pages[0];
     const page2 = pages[1];
+    const page3 = pages[2];
+    const page4 = pages[3];
 
     draw1PageFields(page1, form);
     draw2PageFields(page2, form);
+    draw3PageFields(page3, form);
+    draw4PageFields(page4, form);
+
+    const multilineFields = ["stayPurposeAdditional"];
+    multilineFields.forEach((fieldId) => {
+      const textField = form.getTextField(fieldId);
+      textField.updateAppearances(ubuntuFont);
+      textField.setFontSize(14);
+    });
 
     download(await pdfDoc.save(), "new.pdf", "application/pdf");
 
-    // const fields = form.getFields();
+    const fields = form.getFields();
 
-    // fields.map((field) => console.log(field.getName()));
+    fields.map((field) => console.log(field.getName()));
   };
 
   return (

@@ -33,12 +33,14 @@ export const fields = {
   email: "A.20",
 
   // Section B  cpr - current place of residence
+  isFamilyMemberOutsidePoland: "B.?",
   cprVoivodship: "B.1",
   cprCity: "B.2",
   cprStreet: "B.3",
   cprHouseNumber: "B.4",
   cprApartmentNumber: "B.5",
   cprPostalCode: "B.6",
+
   // Section C
   stayPurpose: "C.I",
   stayPurposeAdditional: "C.I.A",
