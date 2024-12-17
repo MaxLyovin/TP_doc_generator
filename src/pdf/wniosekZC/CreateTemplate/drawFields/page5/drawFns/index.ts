@@ -1,4 +1,4 @@
-import { drawIsCurrentlyInPoland } from "./drawisCurrentlyInPoland";
+import { drawIsCurrentlyInPoland } from "./drawIsCurrentlyInPoland";
 import { drawLastEntryIntoPolandYear } from "./drawLastEntryIntoPolandYear";
 import { drawLegalBasisForStaying } from "./drawLegalBasisForStaying";
 import { drawTravelsOutsidePoland } from "./drawTravelsOutsidePoland";

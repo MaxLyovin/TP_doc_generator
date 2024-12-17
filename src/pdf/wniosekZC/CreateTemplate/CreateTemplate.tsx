@@ -8,6 +8,7 @@ import { draw2PageFields } from "./drawFields/page2/draw2PageFields";
 import { draw3PageFields } from "./drawFields/page3/draw3PageFields";
 import { draw4PageFields } from "./drawFields/page4/draw4PageFields";
 import { draw5PageFields } from "./drawFields/page5/draw5PageFields";
+import { draw6PageFields } from "./drawFields/page6/draw6PageFields";
 
 export const CreateTemplate = () => {
   const handleOnClick = async () => {
@@ -27,12 +28,14 @@ export const CreateTemplate = () => {
     const page3 = pages[2];
     const page4 = pages[3];
     const page5 = pages[4];
+    const page6 = pages[5];
 
     draw1PageFields(page1, form);
     draw2PageFields(page2, form);
     draw3PageFields(page3, form);
     draw4PageFields(page4, form);
     draw5PageFields(page5, form);
+    draw6PageFields(page6, form);
 
     const multilineFields = [
       "stayPurposeAdditional",
@@ -43,6 +46,9 @@ export const CreateTemplate = () => {
       "travelsOutsidePoland",
       "meansOfSubstence",
       "medicalInsurance",
+      "sentencedDescription",
+      "subjectOfCriminalDescription",
+      "liabilitiesResultingDescription",
     ];
 
     const getFontSize = (id: string) => {
@@ -58,8 +64,15 @@ export const CreateTemplate = () => {
         return 13;
       }
 
-      if (id.includes("meansOfSubstence")) {
-        return 12;
+      if (id.includes("sentencedDescription")) {
+        return 13;
+      }
+
+      if (id.includes("subjectOfCriminalDescription")) {
+        return 13;
+      }
+      if (id.includes("liabilitiesResultingDescription")) {
+        return 13;
       }
 
       return 12;
