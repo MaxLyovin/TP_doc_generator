@@ -5,8 +5,8 @@ export const drawIsCurrentlyInPoland = (page: PDFPage, form: PDFForm) => {
   addCellFields({
     page: page,
     form: form,
-    startPoint: { x: 367, y: 735 },
-    dimension: 14,
+    startPoint: { x: 367, y: 733 },
+    dimension: 16,
     cellsAmount: 1,
     cellsSpacing: 18,
     nameBase: "isCurrentlyInPoland_1",
@@ -15,8 +15,8 @@ export const drawIsCurrentlyInPoland = (page: PDFPage, form: PDFForm) => {
   addCellFields({
     page: page,
     form: form,
-    startPoint: { x: 456, y: 735 },
-    dimension: 14,
+    startPoint: { x: 463, y: 733 },
+    dimension: 16,
     cellsAmount: 1,
     cellsSpacing: 18,
     nameBase: "isCurrentlyInPoland_2",

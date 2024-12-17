@@ -1,3 +1,9 @@
-import { drawIsCurrentlyInPoland } from "./ff";
+import { drawIsCurrentlyInPoland } from "./drawisCurrentlyInPoland";
+import { drawLastEntryIntoPolandYear } from "./drawLastEntryIntoPolandYear";
+import { drawLegalBasisForStaying } from "./drawLegalBasisForStaying";
 
-export { drawIsCurrentlyInPoland };
+export {
+  drawIsCurrentlyInPoland,
+  drawLastEntryIntoPolandYear,
+  drawLegalBasisForStaying,
+};
