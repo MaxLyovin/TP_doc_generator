@@ -7,6 +7,7 @@ import { draw1PageFields } from "./drawFields/page1/draw1PageFields";
 import { draw2PageFields } from "./drawFields/page2/draw2PageFields";
 import { draw3PageFields } from "./drawFields/page3/draw3PageFields";
 import { draw4PageFields } from "./drawFields/page4/draw4PageFields";
+import { draw5PageFields } from "./drawFields/page5/draw5PageFields";
 
 export const CreateTemplate = () => {
   const handleOnClick = async () => {
@@ -25,17 +26,38 @@ export const CreateTemplate = () => {
     const page2 = pages[1];
     const page3 = pages[2];
     const page4 = pages[3];
+    const page5 = pages[4];
 
     draw1PageFields(page1, form);
     draw2PageFields(page2, form);
     draw3PageFields(page3, form);
     draw4PageFields(page4, form);
+    draw5PageFields(page5, form);
 
-    const multilineFields = ["stayPurposeAdditional"];
+    const multilineFields = [
+      "stayPurposeAdditional",
+      "familyMemberNameAndSurname_1",
+      "familyMemberCitizenShip_1",
+      "familyMemberResidence_1",
+      "previousVisitsPoland",
+    ];
+
+    const getFontSize = (id: string) => {
+      if (id.includes("familyMemberResidence")) {
+        return 8;
+      }
+
+      if (id.includes("previousVisitsPoland")) {
+        return 14;
+      }
+
+      return 12;
+    };
     multilineFields.forEach((fieldId) => {
       const textField = form.getTextField(fieldId);
       textField.updateAppearances(ubuntuFont);
-      textField.setFontSize(14);
+
+      textField.setFontSize(getFontSize(fieldId));
     });
 
     download(await pdfDoc.save(), "new.pdf", "application/pdf");

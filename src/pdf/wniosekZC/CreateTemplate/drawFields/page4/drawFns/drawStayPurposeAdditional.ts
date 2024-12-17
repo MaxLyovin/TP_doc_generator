@@ -9,7 +9,7 @@ export const drawStayPurposeAdditional = (page: PDFPage, form: PDFForm) => {
     x: 80,
     y: 608,
     height: 32,
-    width: 100,
+    width: 450,
     backgroundColor: undefined,
     borderColor: undefined,
   });
