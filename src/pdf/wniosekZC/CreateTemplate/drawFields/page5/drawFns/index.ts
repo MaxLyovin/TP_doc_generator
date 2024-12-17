@@ -1,3 +1,3 @@
-import { drawIsCurrentlyInPoland } from "./drawisCurrentlyInPoland";
+import { drawIsCurrentlyInPoland } from "./ff";
 
 export { drawIsCurrentlyInPoland };
