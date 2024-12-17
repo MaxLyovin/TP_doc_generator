@@ -40,6 +40,9 @@ export const CreateTemplate = () => {
       "familyMemberCitizenShip_1",
       "familyMemberResidence_1",
       "previousVisitsPoland",
+      "travelsOutsidePoland",
+      "meansOfSubstence",
+      "medicalInsurance",
     ];
 
     const getFontSize = (id: string) => {
@@ -49,6 +52,14 @@ export const CreateTemplate = () => {
 
       if (id.includes("previousVisitsPoland")) {
         return 14;
+      }
+
+      if (id.includes("travelsOutsidePoland")) {
+        return 13;
+      }
+
+      if (id.includes("meansOfSubstence")) {
+        return 12;
       }
 
       return 12;
