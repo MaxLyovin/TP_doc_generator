@@ -127,8 +127,12 @@ export const fields = {
   hasLiabilitiesResulting: "C.10.?",
   liabilitiesResultingDescription: "C.10.D",
 
-  // Attachments
+  // Signature
+  signatureYear: "S.Y",
+  signatureMonth: "S.M",
+  signatureDay: "S.D",
 
+  // Attachments
   Attachment_1: "+_1",
   Attachment_2: "+_2",
   Attachment_3: "+_3",
