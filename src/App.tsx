@@ -1,15 +1,13 @@
 import "./App.css";
 
 import { CreateTemplate } from "./pdf/wniosekZC/CreateTemplate/CreateTemplate";
-import { ReadAndFillFirstPage } from "./ReadAndFillFirstPage/ReadAndFillFirstPage";
+import { ReadAndFillPdf } from "./ReadAndFillFirstPage/ReadAndFillPdf";
 
 function App() {
   return (
     <div>
-      {/* <ReadAndFillFirstPage /> */}
-
+      <ReadAndFillPdf />
       <CreateTemplate />
-      {/* <CreteTemplateFields /> */}
     </div>
   );
 }
