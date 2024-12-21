@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { CreateTemplate } from "./pdf/wniosekZC/CreateTemplate/CreateTemplate";
-import { ReadAndFillPdf } from "./ReadAndFillFirstPage/ReadAndFillPdf";
+import { ReadAndFillPdf } from "./ReadAndFill/ReadAndFillPdf";
 
 function App() {
   return (

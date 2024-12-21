@@ -12,7 +12,7 @@ import { draw6PageFields } from "./drawFields/page6/draw6PageFields";
 import { draw8PageFields } from "./drawFields/page8/draw8PageFields";
 
 export const CreateTemplate = () => {
-  const handleOnClick = async () => {
+  const generateTemplate = async () => {
     const ubuntuFontBytes = await fetch(fontBase).then((res) =>
       res.arrayBuffer()
     );
@@ -125,7 +125,7 @@ export const CreateTemplate = () => {
         Generate pdf template for Wniosek o udzielenie zezwolenia pobytu
         czasowego
       </h2>
-      <button onClick={handleOnClick}>generate</button>
+      <button onClick={generateTemplate}>generate</button>
     </div>
   );
 };

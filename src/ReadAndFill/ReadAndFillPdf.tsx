@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import download from "downloadjs";
 import { getCellName } from "../pdf/utils/getCellName";
 import fontkit from "@pdf-lib/fontkit";
-import { format } from "date-fns";
 
 import { Input, RadioGroup, Select } from "../components/form";
 
@@ -10,101 +10,15 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import pdfBase from "../assets/pdf/templates/wniosekZC_template.pdf";
 import fontBase from "../assets/fonts/Ubuntu-R.ttf";
 import { dataMapWithMeta } from "../utils/transformData";
-import { useState } from "react";
 
-const dateFormat = "yyyy-MM-dd";
-const formatDate = (date: Date | string) => format(date, dateFormat);
-
-enum YesNo {
-  Yes = "1",
-  No = "2",
-}
-
-const yesNoOptions = [
-  { value: YesNo.Yes, label: "yes" },
-  {
-    value: YesNo.No,
-    label: "no",
-  },
-];
-
-const legalBaseForStayingOptions: { value: string; label: string }[] = [
-  { value: "1", label: "ruchu bezwizowego" },
-  { value: "2", label: "wizy" },
-  { value: "3", label: "zezwolenia na pobyt czasowy" },
-  {
-    value: "4",
-    label:
-      "dokumentu uprawniającego do wjazdu i pobytu wydanego przez inne państwo obszaru Schengen",
-  },
-];
-
-const stayPurposeOptions: { value: string; label: string }[] = [
-  { value: "1", label: "wykonywanie pracy" },
-  {
-    value: "2",
-    label: "wykonywanie pracy w zawodzie wymagającym wysokich kwalifikacji",
-  },
-  {
-    value: "3",
-    label:
-      "wykonywanie pracy przez cudzoziemca delegowanego przez pracodawcę zagranicznego na terytorium Rzeczypospolitej Polskiej",
-  },
-  {
-    value: "4",
-    label: "prowadzenie działalności gospodarczej",
-  },
-  {
-    value: "5",
-    label: "podjęcie lub kontynuacja stacjonarnych",
-  },
-  {
-    value: "6",
-    label: "prowadzenie badań naukowych lub prac rozwojowych",
-  },
-  {
-    value: "7",
-    label: "mobilność długoterminowa naukowca",
-  },
-  {
-    value: "8",
-    label: "odbycie stażu",
-  },
-  {
-    value: "9",
-    label: "udział w programie wolontariatu europejskiego",
-  },
-  {
-    value: "10",
-    label: "pobyt z obywatelem Rzeczypospolitej Polskiej",
-  },
-  {
-    value: "11",
-    label: "pobyt z cudzoziemcem",
-  },
-  {
-    value: "12",
-    label: "mobilność długoterminowa członka rodziny naukowca/",
-  },
-  {
-    value: "13",
-    label: "okoliczności związane z byciem ofiarą handlu ludźmi",
-  },
-  {
-    value: "14",
-    label:
-      "okoliczności wymagające krótkotrwałego pobytu na terytorium Rzeczypospolitej Polskiej",
-  },
-  {
-    value: "15",
-    label:
-      "przedłużenie pobytu na terytorium Rzeczypospolitej Polskiej ze względu na pracę sezonową",
-  },
-  {
-    value: "16",
-    label: "inne",
-  },
-];
+import {
+  stayPurposeOptions,
+  YesNo,
+  yesNoOptions,
+  legalBaseForStayingOptions,
+} from "../constants/options";
+import { dash } from "../constants/separators";
+import { formatDate } from "../utils/dates/formatDate";
 
 type Inputs = {
   submitDate: string;
@@ -219,7 +133,6 @@ export const ReadAndFillPdf = () => {
       familyMemberResidence_1: "string",
       familyMemberIsApplyingTP_1: "string",
       familyMemberIsDependent_1: "string",
-
       previousVisitsPoland: "string",
       isCurrentlyInPoland: YesNo.Yes,
       lastEntryIntoPolandYear: "string",
@@ -261,14 +174,12 @@ export const ReadAndFillPdf = () => {
 
       if (docFieldMeta.type === "date") {
         const [dateNameBase] = nameBase.split("Date");
-        const [year, month, date] = value.split("-");
+        const [year, month, date] = value.split(dash);
         const dateParts = [
           { value: year, partBaseName: `${dateNameBase}Year` },
           { value: month, partBaseName: `${dateNameBase}Month` },
           { value: date, partBaseName: `${dateNameBase}Day` },
         ];
-
-        console.log(value, dateParts);
 
         dateParts.forEach(({ partBaseName, value }) => {
           const splitedValue = value.toString().split("");
@@ -333,8 +244,6 @@ export const ReadAndFillPdf = () => {
     const ubuntuFont = await pdfDoc.embedFont(ubuntuFontBytes);
 
     const form = pdfDoc.getForm();
-
-    // form.getFields().forEach((field) => console.log(field.getName()));
 
     const cellsData = prepareCellsData({
       data,
