@@ -1,7 +1,7 @@
 import { PDFPage, PDFForm } from "pdf-lib";
 
 export const drawSubmittingCity = (page: PDFPage, form: PDFForm) => {
-  const submittingCity = form.createTextField("submittingCity");
+  const submittingCity = form.createTextField("submitPlace");
 
   submittingCity.addToPage(page, {
     x: 365,

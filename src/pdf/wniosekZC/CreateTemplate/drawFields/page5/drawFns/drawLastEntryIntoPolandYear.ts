@@ -8,9 +8,9 @@ export const drawLastEntryIntoPolandYear = (page: PDFPage, form: PDFForm) => {
     startPoint: { x: 360, y: 705 },
     dateCorrection: 1,
     dateFieldsBaseNames: {
-      day: "lastEntryIntoPolandYear",
+      day: "lastEntryIntoPolandDay",
       month: "lastEntryIntoPolandMonth",
-      year: "lastEntryIntoPolandDay",
+      year: "lastEntryIntoPolandYear",
     },
   });
 };

@@ -1,10 +1,10 @@
 export const fields = {
   // Section 0
-  submissionPlace: "0.S.P",
-  submissionYear: "0.S.Y",
-  submissionMonth: "0.S.M",
-  submissionDay: "0.S.D",
-  submissionAuthority: "0.S.D",
+  submitPlace: "0.S.P",
+  submitYear: "0.S.Y",
+  submitMonth: "0.S.M",
+  submitDay: "0.S.D",
+  submitAuthority: "0.S.D",
 
   // Section A
   surname: "A.1",
@@ -133,21 +133,21 @@ export const fields = {
   signatureDay: "S.D",
 
   // Attachments
-  Attachment_1: "+_1",
-  Attachment_2: "+_2",
-  Attachment_3: "+_3",
-  Attachment_4: "+_4",
-  Attachment_5: "+_5",
-  Attachment_6: "+_6",
-  Attachment_7: "+_7",
-  Attachment_8: "+_8",
-  Attachment_9: "+_9",
-  Attachment_10: "+_10",
-  Attachment_11: "+_11",
-  Attachment_12: "+_12",
-  Attachment_13: "+_13",
-  Attachment_14: "+_14",
-  Attachment_15: "+_15",
+  attachment_1: "+_1",
+  attachment_2: "+_2",
+  attachment_3: "+_3",
+  attachment_4: "+_4",
+  attachment_5: "+_5",
+  attachment_6: "+_6",
+  attachment_7: "+_7",
+  attachment_8: "+_8",
+  attachment_9: "+_9",
+  attachment_10: "+_10",
+  attachment_11: "+_11",
+  attachment_12: "+_12",
+  attachment_13: "+_13",
+  attachment_14: "+_14",
+  attachment_15: "+_15",
 };
 
 export type FieldNames = keyof typeof fields;

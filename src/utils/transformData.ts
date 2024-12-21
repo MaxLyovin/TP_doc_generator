@@ -1,25 +1,15 @@
-export const dataMapFullToShort = {
-  surname: "A.S",
-  name: "A.N",
-  familyName: "A.SF",
+type CellMeta = {
+  shortName: string;
+  cellsAmount: number;
+  type?: "select" | "date";
+  indexShift?: number;
 };
 
-export const dataMapShortToFull = {
-  "A.S": "surname",
-  "A.N": "name",
-  "A.SF": "familyName",
-};
-
-export const dataMap = Object.assign(dataMapFullToShort, dataMapShortToFull);
-
-export const transformData = (data: Partial<typeof dataMap>) =>
-  Object.fromEntries(
-    Object.entries(data).map(([key, value]) => [dataMap[key] || key, value])
-  );
-
-export const dataMapWithMeta = {
-  submittingCity: { shortName: "", cellsAmount: 1 },
-  wojewoda: { shortName: "", cellsAmount: 1 },
+export const dataMapWithMeta: Record<string, CellMeta> = {
+  // ["submittion-Date"]: { shortName: "", cellsAmount: 1, type: "date" },
+  submitDate: { shortName: "", cellsAmount: 0, type: "date" },
+  submitPlace: { shortName: "", cellsAmount: 1 },
+  submitAuthority: { shortName: "", cellsAmount: 1 },
   surname: { shortName: "A.S", cellsAmount: 20 },
   previousSurname: { shortName: "", cellsAmount: 40 },
   familyName: { shortName: "A.SF", cellsAmount: 20 },
@@ -41,7 +31,7 @@ export const dataMapWithMeta = {
   heigh: { shortName: "", cellsAmount: 3 },
   colourOfEyes: { shortName: "", cellsAmount: 20 },
   specialMarks: { shortName: "", cellsAmount: 20 },
-  pesel: { shortName: "", cellsAmount: 1 },
+  pesel: { shortName: "", cellsAmount: 11 },
   phone: { shortName: "", cellsAmount: 20 },
   email: { shortName: "", cellsAmount: 20 },
   isFamilyMemberOutsidePoland: { shortName: "", cellsAmount: 1 },
@@ -51,7 +41,7 @@ export const dataMapWithMeta = {
   cprHouseNumber: { shortName: "", cellsAmount: 7 },
   cprApartmentNumber: { shortName: "", cellsAmount: 7 },
   cprPostalCode: { shortName: "", cellsAmount: 6 },
-  stayPurpose: { shortName: "", cellsAmount: 1, type: "select" },
+  stayPurpose: { shortName: "", cellsAmount: 16, type: "select" },
   stayPurposeAdditional: { shortName: "", cellsAmount: 1 },
   familyMemberNameAndSurname_1: { shortName: "", cellsAmount: 1 },
   familyMemberSex_1: { shortName: "", cellsAmount: 1 },
@@ -61,15 +51,21 @@ export const dataMapWithMeta = {
   familyMemberResidence_1: { shortName: "", cellsAmount: 1 },
   familyMemberIsApplyingTP_1: { shortName: "", cellsAmount: 1 },
   familyMemberIsDependent_1: { shortName: "", cellsAmount: 1 },
-} as const;
 
-export const docxCells = Object.values(dataMapWithMeta).reduce(
-  (acc: string[], { cellsAmount, shortName }) => {
-    const cells: string[] = [];
-    for (let index = 0; index <= cellsAmount; index++) {
-      cells.push(`${shortName}_${index}`);
-    }
-    return [...acc, ...cells];
-  },
-  []
-);
+  previousVisitsPoland: { shortName: "", cellsAmount: 1 },
+  isCurrentlyInPoland: { shortName: "", cellsAmount: 2, type: "select" },
+  lastEntryIntoPolandYear: { shortName: "", cellsAmount: 4 },
+  lastEntryIntoPolandMonth: { shortName: "", cellsAmount: 2 },
+  lastEntryIntoPolandDay: { shortName: "", cellsAmount: 2 },
+  legalBasisForStaying: { shortName: "", cellsAmount: 4, type: "select" },
+  travelsOutsidePoland: { shortName: "", cellsAmount: 1 },
+  meansOfSubstence: { shortName: "", cellsAmount: 1 },
+  medicalInsurance: { shortName: "", cellsAmount: 1 },
+  clauseDLRS: { shortName: "", cellsAmount: 1 },
+  isSentenced: { shortName: "", cellsAmount: 2, type: "select" },
+  sentencedDescription: { shortName: "", cellsAmount: 1 },
+  isSubjectOfCriminal: { shortName: "", cellsAmount: 2, type: "select" },
+  subjectOfCriminalDescription: { shortName: "", cellsAmount: 1 },
+  hasLiabilitiesResulting: { shortName: "", cellsAmount: 2, type: "select" },
+  liabilitiesResultingDescription: { shortName: "", cellsAmount: 1 },
+};

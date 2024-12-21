@@ -7,9 +7,9 @@ export const drawSubmittingDate = (page: PDFPage, form: PDFForm) => {
     form,
     startPoint: { x: 365, y: 690 },
     dateFieldsBaseNames: {
-      year: "submissionYear",
-      month: "submissionMonth",
-      day: "submissionDay",
+      year: "submitYear",
+      month: "submitMonth",
+      day: "submitDay",
     },
     cellsSpacing: 20,
     dateCorrection: 3,
