@@ -1,13 +1,11 @@
 import "./App.css";
 
-import { Button } from "./components/ui/button";
+import { UserDataForm } from "./UserDataForm/UserDataForm";
 
 function App() {
   return (
     <div>
-      <Button variant={"destructive"} onClick={() => console.log("tada")}>
-        button
-      </Button>
+      <UserDataForm />
     </div>
   );
 }
