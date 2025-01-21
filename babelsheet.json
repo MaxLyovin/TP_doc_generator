@@ -1,0 +1,18 @@
+{
+  "cliVersion": "0.0.15",
+  "spreadsheetId": "1G4SNLiFAOP_yursLnN2cPbKzuHTzp2XfryYE71jZ2cI",
+  "credentials": ".credentials.json",
+  "userInput": {
+    "credentials": ".credentials.json",
+    "title": "redaktor Translations",
+    "includeManual": true,
+    "maxLevels": 5,
+    "outDir": "./i18n/",
+    "scriptPath": "./scripts/fetch-translations.ts",
+    "scriptName": "translations",
+    "example": true,
+    "languages": "en, pl",
+    "email": "lyovin.maxim@gmail.com",
+    "scriptTemplate": "Flat JSON per language (recommended for SPA apps)"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "common.ok": "PROVIDE TRANSLATION",
+  "common.cancel": "PROVIDE TRANSLATION",
+  "common.error.unknown": "PROVIDE TRANSLATION",
+  "login.email": "PROVIDE TRANSLATION",
+  "login.password": "PROVIDE TRANSLATION",
+  "login.signin": "PROVIDE TRANSLATION",
+  "login.signup": "PROVIDE TRANSLATION"
+}
