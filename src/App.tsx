@@ -1,13 +1,11 @@
 import "./App.css";
 
-import { CreateTemplate } from "./pdf/wniosekZC/CreateTemplate/CreateTemplate";
-import { ReadAndFillPdf } from "./ReadAndFill/ReadAndFillPdf";
+import { UserDataForm } from "./UserDataForm/UserDataForm";
 
 function App() {
   return (
     <div>
-      <ReadAndFillPdf />
-      <CreateTemplate />
+      <UserDataForm />
     </div>
   );
 }
