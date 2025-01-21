@@ -41,18 +41,17 @@ export const Step = ({
 
         <div className="flex justify-between items-center flex-grow">
           <p className="text-lg font-semibold">{label}</p>
-          {isStepCompleted && (
-            <Button
-              variant="outline"
-              data-testid={isIntroduction ? "action-preview" : "action-edit"}
-              onClick={() => {
-                setActiveStep();
-              }}
-            >
-              {isIntroduction ? <Eye /> : <Pencil />}
-              {isIntroduction ? "view" : "edit"}
-            </Button>
-          )}
+          <Button
+            className={isStepCompleted ? "visible" : "invisible"}
+            variant="outline"
+            data-testid={isIntroduction ? "action-preview" : "action-edit"}
+            onClick={() => {
+              setActiveStep();
+            }}
+          >
+            {isIntroduction ? <Eye /> : <Pencil />}
+            {isIntroduction ? "view" : "edit"}
+          </Button>
         </div>
       </div>
       {!isLast && <div className="w-[2px] ms-4 h-[24px]  bg-slate-700" />}
