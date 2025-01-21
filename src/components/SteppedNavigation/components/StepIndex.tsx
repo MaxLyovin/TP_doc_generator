@@ -25,7 +25,7 @@ export const StepIndex = ({ state, orderNumber }: StepIndexProps) => {
   }
 
   return (
-    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-200 text-gray-600">
+    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-primary text-white">
       <p className="font-bold"> {orderNumber}</p>
     </div>
   );
