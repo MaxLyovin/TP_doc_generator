@@ -17,7 +17,7 @@ fromBabelsheet({
     }),
     mergeMap((languageEntries$) =>
       languageEntries$.pipe(
-        writeJSONFile(`./i18n/${languageEntries$.key}.json`)
+        writeJSONFile(`./src/i18n/${languageEntries$.key}.json`)
       )
     )
   )
