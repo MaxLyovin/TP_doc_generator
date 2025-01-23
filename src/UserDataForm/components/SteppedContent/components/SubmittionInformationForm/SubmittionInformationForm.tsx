@@ -10,6 +10,7 @@ import { provinceTranslationKeys } from "@/constants/options";
 import { useTranslation } from "react-i18next";
 import { PreviousStepButton } from "@/components/PreviousStepButton/PreviousStepButton";
 import { useUserData } from "@/state/hooks/useUserData";
+import { useStepper } from "@/state/hooks/useStepper";
 
 const formSchema = z.object({
   submitDate: z.string(),
@@ -20,6 +21,7 @@ const formSchema = z.object({
 export const SubmittionInformationForm = () => {
   const { t } = useTranslation();
   const { userData, setUserData } = useUserData();
+  const { goToNextStep } = useStepper();
 
   const submitAuthorityList = provinceTranslationKeys.map((province) => ({
     value: province,
@@ -41,6 +43,7 @@ export const SubmittionInformationForm = () => {
       submitAuthority: values.submitAuthority,
       submitPlace: values.submitPlace,
     }));
+    goToNextStep();
   };
 
   return (

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { userDataStorage } from "@/storage/userDataStorage";
 
-import {
-  UserDataContext,
-  UserData,
-} from "@/state/contexts/UserDataContext/UserDataContext";
+import { UserData } from "@/@types/userData";
+
+import { UserDataContext } from "@/state/contexts/UserDataContext/UserDataContext";
 
 type StepperContextProviderProps = {
   children: React.ReactNode;

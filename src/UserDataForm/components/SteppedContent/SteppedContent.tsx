@@ -2,6 +2,7 @@ import { useStepper } from "@/state/hooks/useStepper";
 import { Button } from "@/components/ui/button";
 import { StepIndex } from "@/UserDataForm/steps";
 import { SubmittionInformationForm } from "./components/SubmittionInformationForm/SubmittionInformationForm";
+import { PersonalInformationNamesForm } from "./components/PersonalInformationForm/PersonalInformationNamesForm";
 
 const Buttons = () => {
   const { goToNextStep, goToPreviousStep } = useStepper();
@@ -21,15 +22,8 @@ export const SteppedContent = () => {
     return <SubmittionInformationForm />;
   }
 
-  if (activeStep === StepIndex.summary) {
-    return (
-      <div className="flex flex-col gap-4">
-        <div>Summary</div>
-        <div>
-          <Buttons />
-        </div>
-      </div>
-    );
+  if (activeStep === StepIndex.personalInformationNames) {
+    return <PersonalInformationNamesForm />;
   }
 
   return (

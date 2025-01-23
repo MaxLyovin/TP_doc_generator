@@ -1,9 +1,5 @@
 import { createContext, Dispatch, SetStateAction } from "react";
-
-export type UserData = {
-  submitPlace: string;
-  submitAuthority: string;
-};
+import { UserData } from "@/@types/userData";
 
 type UserDataContextProps = {
   userData: UserData | undefined;
