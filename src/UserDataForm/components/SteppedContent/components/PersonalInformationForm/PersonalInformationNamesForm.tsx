@@ -7,6 +7,7 @@ import { InputField } from "@/components/form/InputField";
 import { useTranslation } from "react-i18next";
 import { PreviousStepButton } from "@/components/PreviousStepButton/PreviousStepButton";
 import { useUserData } from "@/state/hooks/useUserData";
+import { useStepper } from "@/state/hooks/useStepper";
 
 const formSchema = z.object({
   surname: z.string(),
@@ -22,6 +23,7 @@ const formSchema = z.object({
 export const PersonalInformationNamesForm = () => {
   const { t } = useTranslation();
   const { userData, setUserData } = useUserData();
+  const { goToNextStep } = useStepper();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -42,6 +44,7 @@ export const PersonalInformationNamesForm = () => {
       ...data,
       ...values,
     }));
+    goToNextStep();
   };
 
   return (

@@ -11,7 +11,7 @@ export const yesNoOptions = [
   },
 ];
 
-export const provinceTranslationKeys = [
+export const provinceOptions = [
   "mazowieckie",
   "zachodniopomorskie",
   "pomorskie",
@@ -40,6 +40,8 @@ export const legalBaseForStayingOptions: { value: string; label: string }[] = [
       "dokumentu uprawniającego do wjazdu i pobytu wydanego przez inne państwo obszaru Schengen",
   },
 ];
+
+export const sexOptions = ["K", "M"] as const;
 
 export const stayPurposeOptions: { value: string; label: string }[] = [
   { value: "1", label: "wykonywanie pracy" },

@@ -14,6 +14,7 @@ type InputProps = {
   label: string;
   placeholder?: string;
   description?: string;
+  inputProps?: React.ComponentProps<"input">;
 };
 
 export const InputField = <
@@ -24,6 +25,7 @@ export const InputField = <
   label,
   placeholder,
   description,
+  inputProps,
 }: ControlledProps<TFieldValues, TName, InputProps>) => {
   return (
     <FormField
@@ -32,7 +34,12 @@ export const InputField = <
         <FormItem>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input placeholder={placeholder} {...field} />
+            <Input
+              className="w-full"
+              placeholder={placeholder}
+              {...field}
+              {...inputProps}
+            />
           </FormControl>
           {description && <FormDescription>{description}</FormDescription>}
           <FormMessage />

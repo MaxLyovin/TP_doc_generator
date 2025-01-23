@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/form/InputField";
 import { SelectField } from "@/components/form";
 import { formatDate } from "@/utils/dates/formatDate";
-import { provinceTranslationKeys } from "@/constants/options";
+import { provinceOptions } from "@/constants/options";
 import { useTranslation } from "react-i18next";
 import { PreviousStepButton } from "@/components/PreviousStepButton/PreviousStepButton";
 import { useUserData } from "@/state/hooks/useUserData";
@@ -23,7 +23,7 @@ export const SubmittionInformationForm = () => {
   const { userData, setUserData } = useUserData();
   const { goToNextStep } = useStepper();
 
-  const submitAuthorityList = provinceTranslationKeys.map((province) => ({
+  const submitAuthorityList = provinceOptions.map((province) => ({
     value: province,
     label: t(`province.${province}`),
   }));

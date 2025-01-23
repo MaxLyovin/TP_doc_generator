@@ -9,4 +9,14 @@ export type UserData = Partial<{
   fatherName: string;
   motherName: string;
   motherMaidenName: string;
+  birthday: string;
+  sex: string;
+  placeOfBirth: string;
+  countryOfBirth: string;
+  nationality: string;
+  citizenship: string;
+  martialStatus: string;
+  colourOfEyes: string;
+  specialMarks: string;
+  pesel: string;
 }>;
