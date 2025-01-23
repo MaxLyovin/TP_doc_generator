@@ -1,6 +1,5 @@
 import { SteppedNavigation } from "@/components/SteppedNavigation/SteppedNavigation";
-
-const steps = ["intro", "first step", "second step", "third step", "summary"];
+import { steps } from "@/UserDataForm/steps";
 
 export const AsideContent = () => {
   return (

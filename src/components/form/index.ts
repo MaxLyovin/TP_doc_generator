@@ -1,5 +1,4 @@
-import { Input } from "./Input";
-import { RadioGroup } from "./RadioGroup";
-import { Select } from "./Select";
+import { InputField } from "./InputField";
+import { SelectField } from "./SelectField";
 
-export { Input, RadioGroup, Select };
+export { InputField, SelectField };
