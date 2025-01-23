@@ -19,4 +19,6 @@ export type UserData = Partial<{
   colourOfEyes: string;
   specialMarks: string;
   pesel: string;
+  email: string;
+  phone: string;
 }>;
