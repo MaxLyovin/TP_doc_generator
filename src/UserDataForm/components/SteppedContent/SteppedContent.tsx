@@ -5,6 +5,7 @@ import { SubmittionInformationForm } from "./components/SubmittionInformationFor
 import { PersonalInformationNamesForm } from "./components/PersonalInformationForm/PersonalInformationNamesForm";
 import { PersonalInformationDetailsForm } from "./components/PersonalInformationDetailsForm/PersonalInformationDetailsForm";
 import { ContactsForm } from "./components/ContactsForm/ContactsForm";
+import { ResidencePlaceForm } from "./components/ResidencePlaceForm/ResidencePlaceForm";
 
 const Buttons = () => {
   const { goToNextStep, goToPreviousStep } = useStepper();
@@ -34,6 +35,10 @@ export const SteppedContent = () => {
 
   if (activeStep === StepIndex.contacts) {
     return <ContactsForm />;
+  }
+
+  if (activeStep === StepIndex.residencePlace) {
+    return <ResidencePlaceForm />;
   }
 
   return (

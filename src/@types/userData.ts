@@ -21,4 +21,10 @@ export type UserData = Partial<{
   pesel: string;
   email: string;
   phone: string;
+  cprVoivodship: string;
+  cprCity: string;
+  cprStreet: string;
+  cprHouseNumber: string;
+  cprApartmentNumber: string;
+  cprPostalCode: string;
 }>;
