@@ -10,7 +10,7 @@ type StepIndexProps = {
 export const StepIndex = ({ state, orderNumber }: StepIndexProps) => {
   if (state === "completed") {
     return (
-      <div className="w-8 h-8 rounded-full flex items-center justify-center bg-green-500 text-white ">
+      <div className="w-8 h-8 rounded-full flex items-center justify-center bg-green-500 text-white shrink-0">
         <Check className="w-5 h-5" />
       </div>
     );
@@ -18,14 +18,14 @@ export const StepIndex = ({ state, orderNumber }: StepIndexProps) => {
 
   if (state === "inactive") {
     return (
-      <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-200 text-gray-600">
+      <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-200 text-gray-600 shrink-0">
         {orderNumber}
       </div>
     );
   }
 
   return (
-    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-primary text-white">
+    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-primary text-white shrink-0">
       <p className="font-bold"> {orderNumber}</p>
     </div>
   );

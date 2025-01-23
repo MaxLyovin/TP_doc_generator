@@ -1,12 +1,13 @@
 import "./App.css";
 
 import { UserDataForm } from "./UserDataForm/UserDataForm";
+import { UserDataContextProvider } from "./state/providers/UserDataContextProvider/UserDataContextProvider";
 
 function App() {
   return (
-    <div>
+    <UserDataContextProvider>
       <UserDataForm />
-    </div>
+    </UserDataContextProvider>
   );
 }
 

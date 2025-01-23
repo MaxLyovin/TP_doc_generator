@@ -11,6 +11,25 @@ export const yesNoOptions = [
   },
 ];
 
+export const provinceTranslationKeys = [
+  "mazowieckie",
+  "zachodniopomorskie",
+  "pomorskie",
+  "warminskoMazurskie",
+  "lubuskie",
+  "wielkopolskie",
+  "kujawskoPomorskie",
+  "podlaskie",
+  "dolnoslaskie",
+  "lodzkie",
+  "lubelskie",
+  "opolskie",
+  "slaskie",
+  "swietokrzyskie",
+  "malopolskie",
+  "podkarpackie",
+] as const;
+
 export const legalBaseForStayingOptions: { value: string; label: string }[] = [
   { value: "1", label: "ruchu bezwizowego" },
   { value: "2", label: "wizy" },

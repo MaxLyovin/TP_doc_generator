@@ -19,10 +19,9 @@ export const Step = ({
   setActiveStep,
   isLast = false,
 }: StepProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { activeStep } = useStepper();
 
-  console.log(i18n);
   const isIntroduction = index === 0;
   const orderNumber = index;
   const isStepCompleted = index < activeStep;
