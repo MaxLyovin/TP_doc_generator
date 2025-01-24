@@ -11,6 +11,25 @@ export const yesNoOptions = [
   },
 ];
 
+export const provinceOptions = [
+  "mazowieckie",
+  "zachodniopomorskie",
+  "pomorskie",
+  "warminskoMazurskie",
+  "lubuskie",
+  "wielkopolskie",
+  "kujawskoPomorskie",
+  "podlaskie",
+  "dolnoslaskie",
+  "lodzkie",
+  "lubelskie",
+  "opolskie",
+  "slaskie",
+  "swietokrzyskie",
+  "malopolskie",
+  "podkarpackie",
+] as const;
+
 export const legalBaseForStayingOptions: { value: string; label: string }[] = [
   { value: "1", label: "ruchu bezwizowego" },
   { value: "2", label: "wizy" },
@@ -21,6 +40,8 @@ export const legalBaseForStayingOptions: { value: string; label: string }[] = [
       "dokumentu uprawniającego do wjazdu i pobytu wydanego przez inne państwo obszaru Schengen",
   },
 ];
+
+export const sexOptions = ["K", "M"] as const;
 
 export const stayPurposeOptions: { value: string; label: string }[] = [
   { value: "1", label: "wykonywanie pracy" },

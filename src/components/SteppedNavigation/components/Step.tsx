@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Eye, Pencil } from "lucide-react";
 import { StepIndexState } from "./StepIndex";
 import { StepIndex } from "./StepIndex";
+import { useTranslation } from "react-i18next";
 
 type StepProps = {
   index: number;
@@ -18,6 +19,7 @@ export const Step = ({
   setActiveStep,
   isLast = false,
 }: StepProps) => {
+  const { t } = useTranslation();
   const { activeStep } = useStepper();
 
   const isIntroduction = index === 0;
@@ -50,7 +52,7 @@ export const Step = ({
             }}
           >
             {isIntroduction ? <Eye /> : <Pencil />}
-            {isIntroduction ? "view" : "edit"}
+            {isIntroduction ? t("common.view") : t("common.edit")}
           </Button>
         </div>
       </div>

@@ -1,14 +1,17 @@
 import { useStepper } from "@/state/hooks/useStepper";
+import { useTranslation } from "react-i18next";
 
 import { Wrapper } from "./components/Wrapper";
 import { Step } from "./components/Step";
+import { TranslationKey } from "@/@types/i18next";
 
 type SteppedNavigationProps = {
-  steps: string[];
+  steps: TranslationKey[];
 };
 
 export const SteppedNavigation = ({ steps }: SteppedNavigationProps) => {
   const { activeStep, setActiveStep } = useStepper();
+  const { t } = useTranslation();
 
   return (
     <Wrapper stepsAmount={steps.length} activeStepIndex={activeStep}>
@@ -20,7 +23,7 @@ export const SteppedNavigation = ({ steps }: SteppedNavigationProps) => {
               activeStepIndex={activeStep}
               setActiveStep={() => setActiveStep(index)}
               index={index}
-              label={step}
+              label={t(step)}
               isLast={index === steps.length - 1}
             />
           );

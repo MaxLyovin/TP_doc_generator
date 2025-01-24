@@ -1,5 +1,11 @@
 import { useStepper } from "@/state/hooks/useStepper";
 import { Button } from "@/components/ui/button";
+import { StepIndex } from "@/UserDataForm/steps";
+import { SubmittionInformationForm } from "./components/SubmittionInformationForm/SubmittionInformationForm";
+import { PersonalInformationNamesForm } from "./components/PersonalInformationForm/PersonalInformationNamesForm";
+import { PersonalInformationDetailsForm } from "./components/PersonalInformationDetailsForm/PersonalInformationDetailsForm";
+import { ContactsForm } from "./components/ContactsForm/ContactsForm";
+import { ResidencePlaceForm } from "./components/ResidencePlaceForm/ResidencePlaceForm";
 
 const Buttons = () => {
   const { goToNextStep, goToPreviousStep } = useStepper();
@@ -15,48 +21,24 @@ const Buttons = () => {
 export const SteppedContent = () => {
   const { activeStep } = useStepper();
 
-  if (activeStep === 1) {
-    return (
-      <div className="flex flex-col gap-4">
-        <div>First step</div>
-        <div>
-          <Buttons />
-        </div>
-      </div>
-    );
+  if (activeStep === StepIndex.submittionInformation) {
+    return <SubmittionInformationForm />;
   }
 
-  if (activeStep === 2) {
-    return (
-      <div className="flex flex-col gap-4">
-        <div>Second step</div>
-        <div>
-          <Buttons />
-        </div>
-      </div>
-    );
+  if (activeStep === StepIndex.personalInformationNames) {
+    return <PersonalInformationNamesForm />;
   }
 
-  if (activeStep === 3) {
-    return (
-      <div className="flex flex-col gap-4">
-        <div>Third step</div>
-        <div>
-          <Buttons />
-        </div>
-      </div>
-    );
+  if (activeStep === StepIndex.personalInformationDetails) {
+    return <PersonalInformationDetailsForm />;
   }
 
-  if (activeStep === 4) {
-    return (
-      <div className="flex flex-col gap-4">
-        <div>Summary</div>
-        <div>
-          <Buttons />
-        </div>
-      </div>
-    );
+  if (activeStep === StepIndex.contacts) {
+    return <ContactsForm />;
+  }
+
+  if (activeStep === StepIndex.residencePlace) {
+    return <ResidencePlaceForm />;
   }
 
   return (

@@ -7,10 +7,10 @@ export const UserDataForm = () => {
     <StepperContextProvider shouldSkipIntoduction={false}>
       <div className="container">
         <div className="flex gap-4">
-          <div className="w-5/12 min-h-[100px]">
+          <div className="w-5/12">
             <AsideContent />
           </div>
-          <div className="w-7/12 min-h-[100px] bg-slate-300">
+          <div className="w-7/12">
             <SteppedContent />
           </div>
         </div>
