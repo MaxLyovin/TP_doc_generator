@@ -11,8 +11,16 @@ export const StepperContextProvider = ({
   children,
 }: StepperContextProviderProps) => {
   const [activeStep, setActiveStep] = useState(0);
+  const [lastCompletedStep, setLastCompletedStep] = useState(0);
+  const nextToComplete = lastCompletedStep + 1;
+  const isBrokenSequence =
+    activeStep <= lastCompletedStep && lastCompletedStep > 0;
 
   const goToNextStep = () => {
+    if (!isBrokenSequence) {
+      setLastCompletedStep(activeStep);
+    }
+
     setActiveStep(activeStep + 1);
   };
 
@@ -24,6 +32,9 @@ export const StepperContextProvider = ({
     <StepperContext.Provider
       value={{
         activeStep,
+        lastCompletedStep,
+        nextToComplete,
+        isBrokenSequence,
         setActiveStep,
         goToNextStep,
         goToPreviousStep,

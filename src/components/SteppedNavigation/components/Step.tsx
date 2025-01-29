@@ -1,9 +1,7 @@
 import { useStepper } from "@/state/hooks/useStepper";
-import { Button } from "@/components/ui/button";
-import { Eye, Pencil } from "lucide-react";
 import { StepIndexState } from "./StepIndex";
 import { StepIndex } from "./StepIndex";
-import { useTranslation } from "react-i18next";
+import { ActionButton } from "./ActionButton/ActionButton";
 
 type StepProps = {
   index: number;
@@ -19,17 +17,22 @@ export const Step = ({
   setActiveStep,
   isLast = false,
 }: StepProps) => {
-  const { t } = useTranslation();
-  const { activeStep } = useStepper();
+  const { activeStep, lastCompletedStep, nextToComplete, isBrokenSequence } =
+    useStepper();
 
   const isIntroduction = index === 0;
   const orderNumber = index;
-  const isStepCompleted = index < activeStep;
+  const isStepCompleted = index <= lastCompletedStep;
+  const isNextToComplete = nextToComplete === index;
+  const shouldShowContinueButton = isBrokenSequence && isNextToComplete;
+  const isActive = index === activeStep;
+
+  console.log(isBrokenSequence);
 
   const getStepIndexState = (): StepIndexState => {
+    if (isActive) return "active";
     if (isStepCompleted) return "completed";
-    if (index > activeStep) return "inactive";
-    return "active";
+    return "inactive";
   };
 
   return (
@@ -40,20 +43,20 @@ export const Step = ({
           state={getStepIndexState()}
           orderNumber={orderNumber}
         />
-
         <div className="flex justify-between items-center flex-grow">
-          <p className="text-lg font-semibold">{label}</p>
-          <Button
-            className={isStepCompleted ? "visible" : "invisible"}
-            variant="outline"
-            data-testid={isIntroduction ? "action-preview" : "action-edit"}
-            onClick={() => {
-              setActiveStep();
-            }}
+          <p
+            className={`text-lg font-semibold ${
+              isActive ? "underline underline-offset-4" : ""
+            }`}
           >
-            {isIntroduction ? <Eye /> : <Pencil />}
-            {isIntroduction ? t("common.view") : t("common.edit")}
-          </Button>
+            {label}
+          </p>
+          <ActionButton
+            action={setActiveStep}
+            isIntroduction={isIntroduction}
+            isStepCompleted={isStepCompleted}
+            shouldShowContinueButton={shouldShowContinueButton}
+          />
         </div>
       </div>
       {!isLast && <div className="w-[2px] ms-4 h-[24px]  bg-slate-700" />}
