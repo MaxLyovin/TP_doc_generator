@@ -8,6 +8,7 @@
   "common.error.unknown": "ru_unknown",
   "common.view": "ru_view",
   "common.edit": "ru_edit",
+  "common.continue": "ru_continue",
   "common.next": "ru_next",
   "common.previous": "ru_previous",
   "common.sex.M": "ru_men",
