@@ -10,8 +10,8 @@ type StepperContextProviderProps = {
 export const StepperContextProvider = ({
   children,
 }: StepperContextProviderProps) => {
-  const [activeStep, setActiveStep] = useState(0);
-  const [lastCompletedStep, setLastCompletedStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(6);
+  const [lastCompletedStep, setLastCompletedStep] = useState(6);
   const nextToComplete = lastCompletedStep + 1;
   const isBrokenSequence =
     activeStep <= lastCompletedStep && lastCompletedStep > 0;

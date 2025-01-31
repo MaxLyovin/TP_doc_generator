@@ -3,6 +3,11 @@ export enum YesNo {
   No = "2",
 }
 
+type Options = {
+  value: string;
+  label: string
+}[]
+
 export const yesNoOptions = [
   { value: YesNo.Yes, label: "yes" },
   {
@@ -30,7 +35,7 @@ export const provinceOptions = [
   "podkarpackie",
 ] as const;
 
-export const legalBaseForStayingOptions: { value: string; label: string }[] = [
+export const legalBaseForStayingOptions: Options = [
   { value: "1", label: "ruchu bezwizowego" },
   { value: "2", label: "wizy" },
   { value: "3", label: "zezwolenia na pobyt czasowy" },
@@ -43,7 +48,7 @@ export const legalBaseForStayingOptions: { value: string; label: string }[] = [
 
 export const sexOptions = ["K", "M"] as const;
 
-export const stayPurposeOptions: { value: string; label: string }[] = [
+export const stayPurposeOptions: Options = [
   { value: "1", label: "wykonywanie pracy" },
   {
     value: "2",
@@ -109,3 +114,21 @@ export const stayPurposeOptions: { value: string; label: string }[] = [
     label: "inne",
   },
 ];
+
+export const stayPurposes = [
+  "highQualifications",
+  "foreignerDelegated",
+  "businessActivity",
+  "study",
+  "researchOrDevelopment",
+  "researcher",
+  "training",
+  "voluntary",
+  "citizenStay",
+  "foreignerStay",
+  "familyMemberResearcher",
+  "humanTrafficking",
+  "shortTermStay",
+  "extensionStay",
+  "other",
+] as const;
