@@ -6,5 +6,5 @@ export const PreviousStepButton = () => {
   const { t } = useTranslation();
   const { goToPreviousStep } = useStepper();
 
-  return <Button onClick={goToPreviousStep}>{t("common.previous")}</Button>;
+  return <Button variant='secondary' onClick={goToPreviousStep}>{t("common.previous")}</Button>;
 };

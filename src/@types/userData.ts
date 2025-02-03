@@ -29,4 +29,16 @@ export type UserData = Partial<{
   cprPostalCode: string;
   stayPurpose: string
   stayPurposeAdditional: string
+  familyMemebers: FamilyMember[]
 }>;
+
+export type FamilyMember = {
+  name: string
+  sex: string
+  birthday: string;
+  kinship: string
+  citizenship: string;
+  residencePlace: string
+  isApplying: string
+  isDependent: string
+}
