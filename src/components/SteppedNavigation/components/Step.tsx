@@ -53,6 +53,7 @@ export const Step = ({
           </p>
           <ActionButton
             action={setActiveStep}
+            isActive={isActive}
             isIntroduction={isIntroduction}
             isStepCompleted={isStepCompleted}
             shouldShowContinueButton={shouldShowContinueButton}
