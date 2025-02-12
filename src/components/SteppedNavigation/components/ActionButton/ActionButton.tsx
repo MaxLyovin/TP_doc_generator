@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArcionButtonContent } from "./ArcionButtonContent";
 
 type ActionButtonProps = {
+  isActive: boolean;
   isIntroduction: boolean;
   isStepCompleted: boolean;
   shouldShowContinueButton: boolean;
@@ -10,12 +11,15 @@ type ActionButtonProps = {
 };
 
 export const ActionButton = ({
+  isActive,
   isIntroduction,
   isStepCompleted,
   shouldShowContinueButton,
   action,
 }: ActionButtonProps) => {
-  const isButtonVisible = isStepCompleted || shouldShowContinueButton;
+  const isButtonVisible = isActive
+    ? false
+    : isStepCompleted || shouldShowContinueButton;
 
   return (
     <Button

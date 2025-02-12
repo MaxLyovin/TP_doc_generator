@@ -10,7 +10,7 @@ type StepIndexProps = {
 export const StepIndex = ({ state, orderNumber }: StepIndexProps) => {
   if (state === "completed") {
     return (
-      <div className="w-8 h-8 rounded-full flex items-center justify-center bg-primary text-white shrink-0">
+      <div className="w-8 h-8 rounded-full flex items-center justify-center bg-white text-primary shrink-0 border-2 border-primary">
         <Check className="w-5 h-5" />
       </div>
     );
