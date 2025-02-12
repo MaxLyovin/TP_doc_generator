@@ -27,6 +27,7 @@
   "main_form.step.personal_information_details": "Personal information: details",
   "main_form.step.contacts": "Contacts",
   "main_form.step.residence_place": "Current residence place",
+  "main_form.step.poland_stay_details": "Stay in Poland Details",
   "main_form.step.additional_information": "Additional information",
   "main_form.step.family_members": "Family members",
   "main_form.step.main_purpose": "The main purpose of stay",
@@ -101,5 +102,5 @@
   "stayPurpose.humanTrafficking": "Circumstances associated with being a victim of human trafficking",
   "stayPurpose.shortTermStay": "Circumstances requiring a short-term stay on the territory of the Republic of Poland",
   "stayPurpose.extensionStay": "Extension of stay on the territory of the Republic of Poland due to seasonal work/",
-  "stayPurpose.other": "Inne okoliczności (należy określić jakie)"
+  "stayPurpose.other": "Other circumstances (specify which ones)"
 }

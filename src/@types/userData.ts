@@ -27,4 +27,6 @@ export type UserData = Partial<{
   cprHouseNumber: string;
   cprApartmentNumber: string;
   cprPostalCode: string;
+  stayPurpose: string;
+  stayPurposeAdditional: string;
 }>;

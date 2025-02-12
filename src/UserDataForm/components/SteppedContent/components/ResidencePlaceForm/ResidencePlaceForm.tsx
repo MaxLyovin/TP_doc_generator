@@ -34,6 +34,7 @@ export const ResidencePlaceForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       cprVoivodship: userData?.cprVoivodship,
+      cprCity: userData?.cprCity,
       cprStreet: userData?.cprStreet,
       cprHouseNumber: userData?.cprHouseNumber,
       cprApartmentNumber: userData?.cprApartmentNumber,

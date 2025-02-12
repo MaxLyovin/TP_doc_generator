@@ -1,3 +1,5 @@
+import { TranslationKey } from "@/@types/i18next";
+
 export enum YesNo {
   Yes = "1",
   No = "2",
@@ -43,69 +45,71 @@ export const legalBaseForStayingOptions: { value: string; label: string }[] = [
 
 export const sexOptions = ["K", "M"] as const;
 
-export const stayPurposeOptions: { value: string; label: string }[] = [
-  { value: "1", label: "wykonywanie pracy" },
+export const otherPurposeValue = "16";
+
+export const stayPurposeOptions: {
+  value: string;
+  translationKey: TranslationKey;
+}[] = [
+  { value: "1", translationKey: "stayPurpose.paidActivity" },
   {
     value: "2",
-    label: "wykonywanie pracy w zawodzie wymagającym wysokich kwalifikacji",
+    translationKey: "stayPurpose.highQualifications",
   },
   {
     value: "3",
-    label:
-      "wykonywanie pracy przez cudzoziemca delegowanego przez pracodawcę zagranicznego na terytorium Rzeczypospolitej Polskiej",
+    translationKey: "stayPurpose.foreignerDelegated",
   },
   {
     value: "4",
-    label: "prowadzenie działalności gospodarczej",
+    translationKey: "stayPurpose.businessActivity",
   },
   {
     value: "5",
-    label: "podjęcie lub kontynuacja stacjonarnych",
+    translationKey: "stayPurpose.study",
   },
   {
     value: "6",
-    label: "prowadzenie badań naukowych lub prac rozwojowych",
+    translationKey: "stayPurpose.researchOrDevelopment",
   },
   {
     value: "7",
-    label: "mobilność długoterminowa naukowca",
+    translationKey: "stayPurpose.researcher",
   },
   {
     value: "8",
-    label: "odbycie stażu",
+    translationKey: "stayPurpose.training",
   },
   {
     value: "9",
-    label: "udział w programie wolontariatu europejskiego",
+    translationKey: "stayPurpose.voluntary",
   },
   {
     value: "10",
-    label: "pobyt z obywatelem Rzeczypospolitej Polskiej",
+    translationKey: "stayPurpose.citizenStay",
   },
   {
     value: "11",
-    label: "pobyt z cudzoziemcem",
+    translationKey: "stayPurpose.foreignerStay",
   },
   {
     value: "12",
-    label: "mobilność długoterminowa członka rodziny naukowca/",
+    translationKey: "stayPurpose.familyMemberResearcher",
   },
   {
     value: "13",
-    label: "okoliczności związane z byciem ofiarą handlu ludźmi",
+    translationKey: "stayPurpose.humanTrafficking",
   },
   {
     value: "14",
-    label:
-      "okoliczności wymagające krótkotrwałego pobytu na terytorium Rzeczypospolitej Polskiej",
+    translationKey: "stayPurpose.shortTermStay",
   },
   {
     value: "15",
-    label:
-      "przedłużenie pobytu na terytorium Rzeczypospolitej Polskiej ze względu na pracę sezonową",
+    translationKey: "stayPurpose.extensionStay",
   },
   {
-    value: "16",
-    label: "inne",
+    value: otherPurposeValue,
+    translationKey: "stayPurpose.other",
   },
 ];
