@@ -6,12 +6,12 @@ export enum YesNo {
 }
 
 export const yesNoOptions = [
-  { value: YesNo.Yes, label: "yes" },
+  { value: YesNo.Yes, translationKey: "common.yes" },
   {
     value: YesNo.No,
-    label: "no",
+    translationKey: "common.no",
   },
-];
+] as const;
 
 export const provinceOptions = [
   "mazowieckie",
@@ -32,14 +32,16 @@ export const provinceOptions = [
   "podkarpackie",
 ] as const;
 
-export const legalBaseForStayingOptions: { value: string; label: string }[] = [
-  { value: "1", label: "ruchu bezwizowego" },
-  { value: "2", label: "wizy" },
-  { value: "3", label: "zezwolenia na pobyt czasowy" },
+export const legalBaseForStayingOptions: {
+  value: string;
+  translationKey: TranslationKey;
+}[] = [
+  { value: "1", translationKey: "legal_basis.visafree_regime" },
+  { value: "2", translationKey: "legal_basis.visa" },
+  { value: "3", translationKey: "legal_basis.temporary_residence_permit" },
   {
     value: "4",
-    label:
-      "dokumentu uprawniającego do wjazdu i pobytu wydanego przez inne państwo obszaru Schengen",
+    translationKey: "legal_basis.other_schengen_document",
   },
 ];
 

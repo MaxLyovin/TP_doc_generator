@@ -17,6 +17,7 @@ export const ActionButton = ({
   shouldShowContinueButton,
   action,
 }: ActionButtonProps) => {
+  // TODO: consider possibility select any step
   // const isButtonVisible = isActive
   //   ? false
   //   : isStepCompleted || shouldShowContinueButton;
