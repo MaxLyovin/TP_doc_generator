@@ -17,9 +17,11 @@ export const ActionButton = ({
   shouldShowContinueButton,
   action,
 }: ActionButtonProps) => {
-  const isButtonVisible = isActive
-    ? false
-    : isStepCompleted || shouldShowContinueButton;
+  // const isButtonVisible = isActive
+  //   ? false
+  //   : isStepCompleted || shouldShowContinueButton;
+
+  const isButtonVisible = true;
 
   return (
     <Button

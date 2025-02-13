@@ -27,8 +27,6 @@ export const Step = ({
   const shouldShowContinueButton = isBrokenSequence && isNextToComplete;
   const isActive = index === activeStep;
 
-  console.log(isBrokenSequence);
-
   const getStepIndexState = (): StepIndexState => {
     if (isActive) return "active";
     if (isStepCompleted) return "completed";
