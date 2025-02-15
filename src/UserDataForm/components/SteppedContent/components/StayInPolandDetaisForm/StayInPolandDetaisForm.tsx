@@ -3,6 +3,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
+import { useTranslatedOptions } from "@/i18n/useTranslatedOptions";
 
 import { SelectField, TextAreaField, InputField } from "@/components/form";
 import { useTranslation } from "react-i18next";
@@ -29,23 +30,12 @@ export const StayInPolandDetaisForm = () => {
   const { userData, setUserData } = useUserData();
   const { goToNextStep } = useStepper();
 
-  const stayPurposeOptions = baseStayPurposeOptions.map(
-    ({ value, translationKey }) => ({
-      value: value,
-      label: t(translationKey),
-    })
-  );
+  const stayPurposeOptions = useTranslatedOptions(baseStayPurposeOptions);
 
-  const yesNoOptions = baseYesNoOptions.map(({ value, translationKey }) => ({
-    value: value,
-    label: t(translationKey),
-  }));
+  const yesNoOptions = useTranslatedOptions(baseYesNoOptions);
 
-  const legalBaseForStayingOptions = baseLegalBaseForStayingOptions.map(
-    ({ value, translationKey }) => ({
-      value: value,
-      label: t(translationKey),
-    })
+  const legalBaseForStayingOptions = useTranslatedOptions(
+    baseLegalBaseForStayingOptions
   );
 
   const form = useForm<z.infer<typeof formSchema>>({

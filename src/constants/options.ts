@@ -5,13 +5,20 @@ export enum YesNo {
   No = "2",
 }
 
-export const yesNoOptions = [
+export type Option<T = string> = {
+  value: T;
+  translationKey: TranslationKey;
+};
+
+export type OptionList<T = string> = Option<T>[];
+
+export const yesNoOptions: OptionList = [
   { value: YesNo.Yes, translationKey: "common.yes" },
   {
     value: YesNo.No,
     translationKey: "common.no",
   },
-] as const;
+];
 
 export const provinceOptions = [
   "mazowieckie",
@@ -32,10 +39,7 @@ export const provinceOptions = [
   "podkarpackie",
 ] as const;
 
-export const legalBaseForStayingOptions: {
-  value: string;
-  translationKey: TranslationKey;
-}[] = [
+export const legalBaseForStayingOptions: OptionList = [
   { value: "1", translationKey: "legal_basis.visafree_regime" },
   { value: "2", translationKey: "legal_basis.visa" },
   { value: "3", translationKey: "legal_basis.temporary_residence_permit" },
@@ -49,10 +53,7 @@ export const sexOptions = ["K", "M"] as const;
 
 export const otherPurposeValue = "16";
 
-export const stayPurposeOptions: {
-  value: string;
-  translationKey: TranslationKey;
-}[] = [
+export const stayPurposeOptions: OptionList = [
   { value: "1", translationKey: "stayPurpose.paidActivity" },
   {
     value: "2",
