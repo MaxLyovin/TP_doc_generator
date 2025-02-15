@@ -37,9 +37,9 @@ export const PreviousPolandVisits = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      from: "",
-      to: "",
-      legalBase: "",
+      from: undefined,
+      to: undefined,
+      legalBase: undefined,
     },
   });
 
