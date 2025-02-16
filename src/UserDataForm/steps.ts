@@ -7,6 +7,8 @@ export enum StepIndex {
   personalInformationDetails = 3,
   contacts = 4,
   residencePlace = 5,
+  stayInPolandDetails = 6,
+  previousVisits = 7,
 }
 
 export const steps: TranslationKey[] = [
@@ -16,4 +18,6 @@ export const steps: TranslationKey[] = [
   "main_form.step.personal_information_details",
   "main_form.step.contacts",
   "main_form.step.residence_place",
+  "main_form.step.poland_stay_details",
+  "main_form.step.previous_visits",
 ];
