@@ -33,6 +33,7 @@ export type UserData = Partial<{
 }>;
 
 export type FamilyMember = {
+  id: string
   name: string
   sex: string
   birthday: string;
