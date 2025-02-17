@@ -4,19 +4,14 @@ import { StepIndex } from "./StepIndex";
 import { ActionButton } from "./ActionButton/ActionButton";
 
 type StepProps = {
-  index: number;
-  activeStepIndex: number;
-  label: string;
-  setActiveStep: () => void;
-  isLast?: boolean;
+	index: number;
+	activeStepIndex: number;
+	label: string;
+	setActiveStep: () => void;
+	isLast?: boolean;
 };
 
-export const Step = ({
-  index,
-  label,
-  setActiveStep,
-  isLast = false,
-}: StepProps) => {
+export const Step = ({ index, label, setActiveStep, isLast = false }: StepProps) => {
 	const { activeStep, lastCompletedStep, nextToComplete, isBrokenSequence } = useStepper();
 
 	const isIntroduction = index === 0;
@@ -25,8 +20,6 @@ export const Step = ({
 	const isNextToComplete = nextToComplete === index;
 	const shouldShowContinueButton = isBrokenSequence && isNextToComplete;
 	const isActive = index === activeStep;
-
-	// console.log(isBrokenSequence);
 
 	const getStepIndexState = (): StepIndexState => {
 		if (isActive) return "active";
@@ -48,6 +41,7 @@ export const Step = ({
 					</p>
 					<ActionButton
 						action={setActiveStep}
+						isActive={isActive}
 						isIntroduction={isIntroduction}
 						isStepCompleted={isStepCompleted}
 						shouldShowContinueButton={shouldShowContinueButton}

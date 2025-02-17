@@ -1,18 +1,22 @@
+import { TranslationKey } from "@/@types/i18next";
+
 export enum YesNo {
   Yes = "1",
   No = "2",
 }
 
-type Options = {
-  value: string;
-  label: string
-}[]
+export type Option<T = string> = {
+  value: T;
+  translationKey: TranslationKey;
+};
 
-export const yesNoOptions = [
-  { value: YesNo.Yes, label: "yes" },
+export type OptionList<T = string> = Option<T>[];
+
+export const yesNoOptions: OptionList = [
+  { value: YesNo.Yes, translationKey: "common.yes" },
   {
     value: YesNo.No,
-    label: "no",
+    translationKey: "common.no",
   },
 ];
 
@@ -35,83 +39,81 @@ export const provinceOptions = [
   "podkarpackie",
 ] as const;
 
-export const legalBaseForStayingOptions: Options = [
-  { value: "1", label: "ruchu bezwizowego" },
-  { value: "2", label: "wizy" },
-  { value: "3", label: "zezwolenia na pobyt czasowy" },
+export const legalBaseForStayingOptions: OptionList = [
+  { value: "1", translationKey: "legal_basis.visafree_regime" },
+  { value: "2", translationKey: "legal_basis.visa" },
+  { value: "3", translationKey: "legal_basis.temporary_residence_permit" },
   {
     value: "4",
-    label:
-      "dokumentu uprawniającego do wjazdu i pobytu wydanego przez inne państwo obszaru Schengen",
+    translationKey: "legal_basis.other_schengen_document",
   },
 ];
 
 export const sexOptions = ["K", "M"] as const;
 
-export const stayPurposeOptions: Options = [
-  { value: "1", label: "wykonywanie pracy" },
+export const otherPurposeValue = "16";
+
+export const stayPurposeOptions: OptionList = [
+  { value: "1", translationKey: "stayPurpose.paidActivity" },
   {
     value: "2",
-    label: "wykonywanie pracy w zawodzie wymagającym wysokich kwalifikacji",
+    translationKey: "stayPurpose.highQualifications",
   },
   {
     value: "3",
-    label:
-      "wykonywanie pracy przez cudzoziemca delegowanego przez pracodawcę zagranicznego na terytorium Rzeczypospolitej Polskiej",
+    translationKey: "stayPurpose.foreignerDelegated",
   },
   {
     value: "4",
-    label: "prowadzenie działalności gospodarczej",
+    translationKey: "stayPurpose.businessActivity",
   },
   {
     value: "5",
-    label: "podjęcie lub kontynuacja stacjonarnych",
+    translationKey: "stayPurpose.study",
   },
   {
     value: "6",
-    label: "prowadzenie badań naukowych lub prac rozwojowych",
+    translationKey: "stayPurpose.researchOrDevelopment",
   },
   {
     value: "7",
-    label: "mobilność długoterminowa naukowca",
+    translationKey: "stayPurpose.researcher",
   },
   {
     value: "8",
-    label: "odbycie stażu",
+    translationKey: "stayPurpose.training",
   },
   {
     value: "9",
-    label: "udział w programie wolontariatu europejskiego",
+    translationKey: "stayPurpose.voluntary",
   },
   {
     value: "10",
-    label: "pobyt z obywatelem Rzeczypospolitej Polskiej",
+    translationKey: "stayPurpose.citizenStay",
   },
   {
     value: "11",
-    label: "pobyt z cudzoziemcem",
+    translationKey: "stayPurpose.foreignerStay",
   },
   {
     value: "12",
-    label: "mobilność długoterminowa członka rodziny naukowca/",
+    translationKey: "stayPurpose.familyMemberResearcher",
   },
   {
     value: "13",
-    label: "okoliczności związane z byciem ofiarą handlu ludźmi",
+    translationKey: "stayPurpose.humanTrafficking",
   },
   {
     value: "14",
-    label:
-      "okoliczności wymagające krótkotrwałego pobytu na terytorium Rzeczypospolitej Polskiej",
+    translationKey: "stayPurpose.shortTermStay",
   },
   {
     value: "15",
-    label:
-      "przedłużenie pobytu na terytorium Rzeczypospolitej Polskiej ze względu na pracę sezonową",
+    translationKey: "stayPurpose.extensionStay",
   },
   {
-    value: "16",
-    label: "inne",
+    value: otherPurposeValue,
+    translationKey: "stayPurpose.other",
   },
 ];
 
