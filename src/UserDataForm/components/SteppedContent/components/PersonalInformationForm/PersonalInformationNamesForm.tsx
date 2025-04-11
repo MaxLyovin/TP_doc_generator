@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslation } from "react-i18next";
+
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/form/InputField";
-import { useTranslation } from "react-i18next";
 import { PreviousStepButton } from "@/components/PreviousStepButton/PreviousStepButton";
 import { useUserData } from "@/state/hooks/useUserData";
 import { useStepper } from "@/state/hooks/useStepper";

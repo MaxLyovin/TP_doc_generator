@@ -1,3 +1,6 @@
+import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
 import {
   Table,
   TableBody,
@@ -6,10 +9,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { X } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { Travel } from "./TravelsOutsidePoland";
 import { Button } from "@/components/ui/button";
+
+import { Travel } from "./TravelsOutsidePoland";
+
 
 type TravelsOutsidePolandTableProps = {
   travels: Travel[];

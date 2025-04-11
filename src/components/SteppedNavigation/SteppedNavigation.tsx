@@ -1,9 +1,10 @@
-import { useStepper } from "@/state/hooks/useStepper";
 import { useTranslation } from "react-i18next";
+
+import { useStepper } from "@/state/hooks/useStepper";
+import { TranslationKey } from "@/@types/i18next";
 
 import { Wrapper } from "./components/Wrapper";
 import { Step } from "./components/Step";
-import { TranslationKey } from "@/@types/i18next";
 
 type SteppedNavigationProps = {
   steps: TranslationKey[];

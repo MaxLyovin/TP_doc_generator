@@ -1,15 +1,17 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { InputField, SelectField } from "@/components/form";
-import { useTranslation } from "react-i18next";
 import { PreviousStepButton } from "@/components/PreviousStepButton/PreviousStepButton";
 import { useUserData } from "@/state/hooks/useUserData";
 import { stayPurposes } from "@/constants/options";
 import { useStepper } from "@/state/hooks/useStepper";
-import { useEffect, useState } from "react";
+
 
 const formSchema = z.object({
   stayPurpose: z.string(),

@@ -1,6 +1,6 @@
 import { useStepper } from "@/state/hooks/useStepper";
-import { StepIndexState } from "./StepIndex";
-import { StepIndex } from "./StepIndex";
+
+import { StepIndexState , StepIndex } from "./StepIndex";
 import { ActionButton } from "./ActionButton/ActionButton";
 
 type StepProps = {

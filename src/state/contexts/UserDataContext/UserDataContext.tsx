@@ -1,4 +1,5 @@
 import { createContext, Dispatch, SetStateAction } from "react";
+
 import { UserData } from "@/@types/userData";
 
 type UserDataContextProps = {
