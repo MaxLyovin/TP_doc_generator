@@ -116,3 +116,21 @@ export const stayPurposeOptions: OptionList = [
     translationKey: "stayPurpose.other",
   },
 ];
+
+export const stayPurposes = [
+  "highQualifications",
+  "foreignerDelegated",
+  "businessActivity",
+  "study",
+  "researchOrDevelopment",
+  "researcher",
+  "training",
+  "voluntary",
+  "citizenStay",
+  "foreignerStay",
+  "familyMemberResearcher",
+  "humanTrafficking",
+  "shortTermStay",
+  "extensionStay",
+  "other",
+] as const;

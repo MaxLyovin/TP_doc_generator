@@ -30,11 +30,24 @@ export type UserData = Partial<{
   cprHouseNumber: string;
   cprApartmentNumber: string;
   cprPostalCode: string;
-  stayPurpose: string;
-  stayPurposeAdditional: string;
+  stayPurpose: string
+  stayPurposeAdditional: string
+  familyMemebers: FamilyMember[]
   isCurrentlyInPoland: string;
   lastEntryIntoPoland: string;
   legalBasisForStaying: string;
   previousVisitsPoland: Visit[];
   travelsOutsidePoland: Travel[];
 }>;
+
+export type FamilyMember = {
+  id: string
+  name: string
+  sex: string
+  birthday: string;
+  kinship: string
+  citizenship: string;
+  residencePlace: string
+  isApplying: string
+  isDependent: string
+}
