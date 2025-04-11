@@ -10,6 +10,8 @@ import { ResidencePlaceForm } from './components/ResidencePlaceForm/ResidencePla
 import { FamilyMembersForm } from './components/FamilyMembers/FamilyMembersForm';
 import { StayInPolandDetaisForm } from './components/StayInPolandDetaisForm/StayInPolandDetaisForm';
 import { PrevoiusVisits } from './components/PreviousVisits/PrevoiusVisits';
+import { AdditionalInformationForm } from './components/AdditionalInformationForm/AdditionalInformationForm';
+import { Attachments } from './components/Attachments/Attachments';
 
 const Buttons = () => {
   const { goToNextStep, goToPreviousStep } = useStepper();
@@ -54,6 +56,14 @@ export const SteppedContent = () => {
 
   if (activeStep === StepIndex.previousVisits) {
     return <PrevoiusVisits />;
+  }
+
+  if (activeStep === StepIndex.additionalInformation) {
+    return <AdditionalInformationForm />;
+  }
+
+  if (activeStep === StepIndex.attachments) {
+    return <Attachments />;
   }
 
   return (
