@@ -80,7 +80,6 @@ export const AdditionalInformationForm = () => {
             controllerProps={{ control: form.control, name: 'sentencedDescription' }}
             label={t('main_form.field.sentenced_description.label')}
           />
-
           <SelectField
             controllerProps={{ control: form.control, name: 'isSubjectOfCriminal' }}
             options={yesNoOptions}
@@ -90,7 +89,6 @@ export const AdditionalInformationForm = () => {
             controllerProps={{ control: form.control, name: 'subjectOfCriminalDescription' }}
             label={t('main_form.field.subjec_of_criminal_description.label')}
           />
-
           <SelectField
             controllerProps={{ control: form.control, name: 'hasLiabilitiesResulting' }}
             options={yesNoOptions}
@@ -100,7 +98,6 @@ export const AdditionalInformationForm = () => {
             controllerProps={{ control: form.control, name: 'liabilitiesResultingDescription' }}
             label={t('main_form.field.liabilities_resulting_description.label')}
           />
-
           <div className="flex justify-between">
             <PreviousStepButton />
             <Button type="submit">{t('common.next')}</Button>
