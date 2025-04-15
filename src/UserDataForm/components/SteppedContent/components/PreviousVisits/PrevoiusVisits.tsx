@@ -1,13 +1,16 @@
+import { useTranslation } from "react-i18next";
+
 import { PreviousStepButton } from "@/components/PreviousStepButton/PreviousStepButton";
-import { PreviousPolandVisits } from "./components/PreviousPolandVisits";
-import { TravelsOutsidePoland } from "./components/TravelsOutsidePoland";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { useTranslation } from "react-i18next";
 import { useUserData } from "@/state/hooks/useUserData";
+import { useStepper } from "@/state/hooks/useStepper";
+
+import { PreviousPolandVisits } from "./components/PreviousPolandVisits";
+import { TravelsOutsidePoland } from "./components/TravelsOutsidePoland";
 import { usePreviousPolandVisits } from "./components/PreviousPolandVisits/hooks/usePreviousPolandVisits";
 import { useTravelsOutsidePoland } from "./components/TravelsOutsidePoland/hooks/useTravelsOutsidePoland";
-import { useStepper } from "@/state/hooks/useStepper";
+
 
 export const PrevoiusVisits = () => {
   const { t } = useTranslation();

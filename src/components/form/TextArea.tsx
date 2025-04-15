@@ -1,3 +1,5 @@
+import { FieldValues, FieldPath } from "react-hook-form";
+
 import {
   FormControl,
   FormDescription,
@@ -6,7 +8,6 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-import { FieldValues, FieldPath } from "react-hook-form";
 import { Textarea } from "../ui/textarea";
 import { ControlledProps } from "@/@types/form";
 

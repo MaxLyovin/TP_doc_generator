@@ -1,5 +1,6 @@
-import { ControlledProps } from "@/@types/form";
 import type { FieldPath, FieldValues } from "react-hook-form";
+
+import { ControlledProps } from "@/@types/form";
 import {
 	FormControl,
 	FormDescription,

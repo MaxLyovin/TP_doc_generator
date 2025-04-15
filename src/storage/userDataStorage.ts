@@ -1,6 +1,6 @@
-import { UserData } from "@/@types/userData";
+import { UserData } from '@/@types/userData';
 
-const storageKey = "userData";
+const storageKey = 'userData';
 
 class UserDataStorage {
   set(userData: UserData) {

@@ -1,24 +1,17 @@
-import { useState } from "react";
-import { PDFDocument } from "pdf-lib";
-import download from "downloadjs";
-import { getCellName } from "../pdf/utils/getCellName";
-import fontkit from "@pdf-lib/fontkit";
+import { useState } from 'react';
+import { PDFDocument } from 'pdf-lib';
+import download from 'downloadjs';
+import fontkit from '@pdf-lib/fontkit';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
-import { Input, RadioGroup, Select } from "../components/form";
-
-import { useForm, SubmitHandler } from "react-hook-form";
-import pdfBase from "../assets/pdf/templates/wniosekZC_template.pdf";
-import fontBase from "../assets/fonts/Ubuntu-R.ttf";
-import { dataMapWithMeta } from "../utils/transformData";
-
-import {
-  stayPurposeOptions,
-  YesNo,
-  yesNoOptions,
-  legalBaseForStayingOptions,
-} from "../constants/options";
-import { dash } from "../constants/separators";
-import { formatDate } from "../utils/dates/formatDate";
+import { getCellName } from '../pdf/utils/getCellName';
+import { Input, RadioGroup, Select } from '../components/form';
+import pdfBase from '../assets/pdf/templates/wniosekZC_template.pdf';
+import fontBase from '../assets/fonts/Ubuntu-R.ttf';
+import { dataMapWithMeta } from '../utils/transformData';
+import { stayPurposeOptions, YesNo, yesNoOptions, legalBaseForStayingOptions } from '../constants/options';
+import { dash } from '../constants/separators';
+import { formatDate } from '../utils/dates/formatDate';
 
 type Inputs = {
   submitDate: string;
@@ -90,65 +83,65 @@ export const ReadAndFillPdf = () => {
   const { register, handleSubmit } = useForm<Inputs>({
     defaultValues: {
       submitDate: formatDate(new Date()),
-      submitPlace: "Warszawa",
-      submitAuthority: "Mazowiecki",
-      surname: "Kowalski",
-      previousSurname: "Kozłowski",
-      familyName: "Kozłowski",
-      name: "Jan",
-      previousName: "Janek",
-      fatherName: "Sylwestr",
-      motherName: "string",
-      motherMaidenName: "string",
-      birthdayYear: "string",
-      birthdayMonth: "string",
-      birthdayDay: "string",
-      sex: "string",
-      placeOfBirth: "string",
-      countryOfBirth: "string",
-      nationality: "string",
-      citizenship: "string",
-      martialStatus: "string",
-      education: "string",
-      heigh: "string",
-      colourOfEyes: "string",
-      specialMarks: "string",
-      pesel: "string",
-      phone: "string",
-      email: "string",
-      isFamilyMemberOutsidePoland: "",
-      cprVoivodship: "string",
-      cprCity: "string",
-      cprStreet: "string",
-      cprHouseNumber: "string",
-      cprApartmentNumber: "string",
-      cprPostalCode: "string",
+      submitPlace: 'Warszawa',
+      submitAuthority: 'Mazowiecki',
+      surname: 'Kowalski',
+      previousSurname: 'Kozłowski',
+      familyName: 'Kozłowski',
+      name: 'Jan',
+      previousName: 'Janek',
+      fatherName: 'Sylwestr',
+      motherName: 'string',
+      motherMaidenName: 'string',
+      birthdayYear: 'string',
+      birthdayMonth: 'string',
+      birthdayDay: 'string',
+      sex: 'string',
+      placeOfBirth: 'string',
+      countryOfBirth: 'string',
+      nationality: 'string',
+      citizenship: 'string',
+      martialStatus: 'string',
+      education: 'string',
+      heigh: 'string',
+      colourOfEyes: 'string',
+      specialMarks: 'string',
+      pesel: 'string',
+      phone: 'string',
+      email: 'string',
+      isFamilyMemberOutsidePoland: '',
+      cprVoivodship: 'string',
+      cprCity: 'string',
+      cprStreet: 'string',
+      cprHouseNumber: 'string',
+      cprApartmentNumber: 'string',
+      cprPostalCode: 'string',
       stayPurpose: stayPurposeOptions[0].value,
-      stayPurposeAdditional: "string",
-      familyMemberNameAndSurname_1: "string",
-      familyMemberSex_1: "string",
-      familyMemberBirthday_1: "string",
-      familyMemberKinDegree_1: "string",
-      familyMemberCitizenShip_1: "string",
-      familyMemberResidence_1: "string",
-      familyMemberIsApplyingTP_1: "string",
-      familyMemberIsDependent_1: "string",
-      previousVisitsPoland: "string",
+      stayPurposeAdditional: 'string',
+      familyMemberNameAndSurname_1: 'string',
+      familyMemberSex_1: 'string',
+      familyMemberBirthday_1: 'string',
+      familyMemberKinDegree_1: 'string',
+      familyMemberCitizenShip_1: 'string',
+      familyMemberResidence_1: 'string',
+      familyMemberIsApplyingTP_1: 'string',
+      familyMemberIsDependent_1: 'string',
+      previousVisitsPoland: 'string',
       isCurrentlyInPoland: YesNo.Yes,
-      lastEntryIntoPolandYear: "string",
-      lastEntryIntoPolandMonth: "string",
-      lastEntryIntoPolandDay: "string",
+      lastEntryIntoPolandYear: 'string',
+      lastEntryIntoPolandMonth: 'string',
+      lastEntryIntoPolandDay: 'string',
       legalBasisForStaying: legalBaseForStayingOptions[0].value,
-      travelsOutsidePoland: "string",
-      meansOfSubstence: "string",
-      medicalInsurance: "string",
-      clauseDLRS: "string",
+      travelsOutsidePoland: 'string',
+      meansOfSubstence: 'string',
+      medicalInsurance: 'string',
+      clauseDLRS: 'string',
       isSentenced: YesNo.Yes,
-      sentencedDescription: "string",
+      sentencedDescription: 'string',
       isSubjectOfCriminal: YesNo.Yes,
-      subjectOfCriminalDescription: "string",
+      subjectOfCriminalDescription: 'string',
       hasLiabilitiesResulting: YesNo.Yes,
-      liabilitiesResultingDescription: "string",
+      liabilitiesResultingDescription: 'string',
     },
   });
 
@@ -165,15 +158,14 @@ export const ReadAndFillPdf = () => {
     const cellsData: [string, string][] = [];
 
     for (const [nameBase, value] of Object.entries(data)) {
-      const docFieldMeta =
-        dataMapWithMeta[nameBase as keyof typeof dataMapWithMeta];
+      const docFieldMeta = dataMapWithMeta[nameBase as keyof typeof dataMapWithMeta];
 
       if (docFieldMeta === undefined) {
         continue;
       }
 
-      if (docFieldMeta.type === "date") {
-        const [dateNameBase] = nameBase.split("Date");
+      if (docFieldMeta.type === 'date') {
+        const [dateNameBase] = nameBase.split('Date');
         const [year, month, date] = value.split(dash);
         const dateParts = [
           { value: year, partBaseName: `${dateNameBase}Year` },
@@ -182,14 +174,14 @@ export const ReadAndFillPdf = () => {
         ];
 
         dateParts.forEach(({ partBaseName, value }) => {
-          const splitedValue = value.toString().split("");
+          const splitedValue = value.toString().split('');
 
           for (let index = 0; index < splitedValue.length; index++) {
             const cellName = getCellName(partBaseName, index);
 
             cellsData.push([
               withBracketsWrapper ? `{${cellName}}` : cellName,
-              (splitedValue[index] ?? "").toUpperCase(),
+              (splitedValue[index] ?? '').toUpperCase(),
             ]);
           }
         });
@@ -202,30 +194,17 @@ export const ReadAndFillPdf = () => {
         continue;
       }
 
-      const splitedValue = value.split("");
+      const splitedValue = value.split('');
 
-      for (
-        let index = docFieldMeta.type === "select" ? 1 : 0;
-        index < docFieldMeta.cellsAmount;
-        index++
-      ) {
-        const cellName = getCellName(
-          shouldTransformToShort ? docFieldMeta.shortName : nameBase,
-          index
-        );
+      for (let index = docFieldMeta.type === 'select' ? 1 : 0; index < docFieldMeta.cellsAmount; index++) {
+        const cellName = getCellName(shouldTransformToShort ? docFieldMeta.shortName : nameBase, index);
 
-        if (docFieldMeta.type === "select") {
-          const cellFromSelectValue = index === Number(value) ? "X" : "";
-          cellsData.push([
-            withBracketsWrapper ? `{${cellName}}` : cellName,
-            cellFromSelectValue.toUpperCase(),
-          ]);
+        if (docFieldMeta.type === 'select') {
+          const cellFromSelectValue = index === Number(value) ? 'X' : '';
+          cellsData.push([withBracketsWrapper ? `{${cellName}}` : cellName, cellFromSelectValue.toUpperCase()]);
           continue;
         }
-        cellsData.push([
-          withBracketsWrapper ? `{${cellName}}` : cellName,
-          (splitedValue[index] ?? "").toUpperCase(),
-        ]);
+        cellsData.push([withBracketsWrapper ? `{${cellName}}` : cellName, (splitedValue[index] ?? '').toUpperCase()]);
       }
     }
 
@@ -236,9 +215,7 @@ export const ReadAndFillPdf = () => {
     setIsProcessing(true);
     const startTime = new Date();
     const pdfBaseBytes = await fetch(pdfBase).then((res) => res.arrayBuffer());
-    const ubuntuFontBytes = await fetch(fontBase).then((res) =>
-      res.arrayBuffer()
-    );
+    const ubuntuFontBytes = await fetch(fontBase).then((res) => res.arrayBuffer());
     const pdfDoc = await PDFDocument.load(pdfBaseBytes);
     pdfDoc.registerFontkit(fontkit);
     const ubuntuFont = await pdfDoc.embedFont(ubuntuFontBytes);
@@ -266,184 +243,73 @@ export const ReadAndFillPdf = () => {
     console.log(startTime, endTime);
     setIsProcessing(false);
 
-    download(await pdfDoc.save(), "filledPdf.pdf", "application/pdf");
+    download(await pdfDoc.save(), 'filledPdf.pdf', 'application/pdf');
   };
 
   return (
     <div>
       <h3>ReadAndFillFirstPage</h3>
       <form className="flex flex-col gap-4">
-        <Input
-          id="submittionDate"
-          label="submittionDate"
-          register={register("submitDate")}
-          type="date"
-        />
-        <Input
-          id="submittingCity"
-          label="City"
-          register={register("submitPlace")}
-        />
-        <Input
-          id="wojewoda"
-          label="Wojewoda"
-          register={register("submitAuthority")}
-        />
-        <Input id="surname" label="Surname" register={register("surname")} />
-        <Input
-          id="previousSurname"
-          label="Previous Surname"
-          register={register("previousSurname")}
-        />
-        <Input
-          id="familyName"
-          label="Family Name"
-          register={register("familyName")}
-        />
-        <Input id="name" label="Name" register={register("name")} />
-        <Input
-          id="previousName"
-          label="Previous Name"
-          register={register("previousName")}
-        />
-        <Input
-          id="fatherName"
-          label="Father Name"
-          register={register("fatherName")}
-        />
-        <Input
-          id="motherName"
-          label="Mother Name"
-          register={register("motherName")}
-        />
-        <Input
-          id="motherMaidenName"
-          label="Mother maiden Name"
-          register={register("motherMaidenName")}
-        />
-        <Input
-          id="birthdayYear"
-          label="birthday year"
-          register={register("birthdayYear")}
-        />
-        <Input
-          id="birthdayMonth"
-          label="birthday month"
-          register={register("birthdayMonth")}
-        />
-        <Input
-          id="birthdayDay"
-          label="birthday day"
-          register={register("birthdayDay")}
-        />
-        <Input id="sex" label="sex" register={register("sex")} />
-        <Input
-          id="placeOfBirth"
-          label="placeOfBirth"
-          register={register("placeOfBirth")}
-        />
-        <Input
-          id="countryOfBirth"
-          label="countryOfBirth"
-          register={register("countryOfBirth")}
-        />
-        <Input
-          id="nationality"
-          label="nationality"
-          register={register("nationality")}
-        />
-        <Input
-          id="citizenship"
-          label="citizenship"
-          register={register("citizenship")}
-        />
-        <Input
-          id="martialStatus"
-          label="martialStatus"
-          register={register("martialStatus")}
-        />
-        <Input id="heigh" label="heigh" register={register("heigh")} />
-        <Input
-          id="colourOfEyes"
-          label="colourOfEyes"
-          register={register("colourOfEyes")}
-        />
-        <Input
-          id="specialMarks"
-          label="specialMarks"
-          register={register("specialMarks")}
-        />
-        <Input id="pesel" label="pesel" register={register("pesel")} />
-        <Input id="email" label="email" register={register("email")} />
+        <Input id="submittionDate" label="submittionDate" register={register('submitDate')} type="date" />
+        <Input id="submittingCity" label="City" register={register('submitPlace')} />
+        <Input id="wojewoda" label="Wojewoda" register={register('submitAuthority')} />
+        <Input id="surname" label="Surname" register={register('surname')} />
+        <Input id="previousSurname" label="Previous Surname" register={register('previousSurname')} />
+        <Input id="familyName" label="Family Name" register={register('familyName')} />
+        <Input id="name" label="Name" register={register('name')} />
+        <Input id="previousName" label="Previous Name" register={register('previousName')} />
+        <Input id="fatherName" label="Father Name" register={register('fatherName')} />
+        <Input id="motherName" label="Mother Name" register={register('motherName')} />
+        <Input id="motherMaidenName" label="Mother maiden Name" register={register('motherMaidenName')} />
+        <Input id="birthdayYear" label="birthday year" register={register('birthdayYear')} />
+        <Input id="birthdayMonth" label="birthday month" register={register('birthdayMonth')} />
+        <Input id="birthdayDay" label="birthday day" register={register('birthdayDay')} />
+        <Input id="sex" label="sex" register={register('sex')} />
+        <Input id="placeOfBirth" label="placeOfBirth" register={register('placeOfBirth')} />
+        <Input id="countryOfBirth" label="countryOfBirth" register={register('countryOfBirth')} />
+        <Input id="nationality" label="nationality" register={register('nationality')} />
+        <Input id="citizenship" label="citizenship" register={register('citizenship')} />
+        <Input id="martialStatus" label="martialStatus" register={register('martialStatus')} />
+        <Input id="heigh" label="heigh" register={register('heigh')} />
+        <Input id="colourOfEyes" label="colourOfEyes" register={register('colourOfEyes')} />
+        <Input id="specialMarks" label="specialMarks" register={register('specialMarks')} />
+        <Input id="pesel" label="pesel" register={register('pesel')} />
+        <Input id="email" label="email" register={register('email')} />
         <RadioGroup
           groupDescription="isFamilyMemberOutsidePoland"
           options={[
-            { value: "X", label: "Yes" },
-            { value: "", label: "No" },
+            { value: 'X', label: 'Yes' },
+            { value: '', label: 'No' },
           ]}
-          register={register("isFamilyMemberOutsidePoland")}
+          register={register('isFamilyMemberOutsidePoland')}
         />
-        <Input
-          id="cprVoivodship"
-          label="cprVoivodship"
-          register={register("cprVoivodship")}
-        />
-        <Input id="cprCity" label="cprCity" register={register("cprCity")} />
-        <Input
-          id="cprStreet"
-          label="cprStreet"
-          register={register("cprStreet")}
-        />
-        <Input
-          id="cprHouseNumber"
-          label="cprHouseNumber"
-          register={register("cprHouseNumber")}
-        />
-        <Input
-          id="cprApartmentNumber"
-          label="cprApartmentNumber"
-          register={register("cprApartmentNumber")}
-        />
-        <Input
-          id="cprPostalCode"
-          label="cprPostalCode"
-          register={register("cprPostalCode")}
-        />
-        <Select
-          selectDescription="stayPurpose"
-          register={register("stayPurpose")}
-          options={stayPurposeOptions}
-        />
-        <Input
-          id="stayPurposeAdditional"
-          label="stayPurposeAdditional"
-          register={register("stayPurposeAdditional")}
-        />
+        <Input id="cprVoivodship" label="cprVoivodship" register={register('cprVoivodship')} />
+        <Input id="cprCity" label="cprCity" register={register('cprCity')} />
+        <Input id="cprStreet" label="cprStreet" register={register('cprStreet')} />
+        <Input id="cprHouseNumber" label="cprHouseNumber" register={register('cprHouseNumber')} />
+        <Input id="cprApartmentNumber" label="cprApartmentNumber" register={register('cprApartmentNumber')} />
+        <Input id="cprPostalCode" label="cprPostalCode" register={register('cprPostalCode')} />
+        <Select selectDescription="stayPurpose" register={register('stayPurpose')} options={stayPurposeOptions} />
+        <Input id="stayPurposeAdditional" label="stayPurposeAdditional" register={register('stayPurposeAdditional')} />
         <RadioGroup
           groupDescription="isCurrentlyInPoland"
           options={yesNoOptions}
-          register={register("isCurrentlyInPoland")}
+          register={register('isCurrentlyInPoland')}
         />
 
         <Select
           selectDescription="legalBasisForStaying"
-          register={register("legalBasisForStaying")}
+          register={register('legalBasisForStaying')}
           options={legalBaseForStayingOptions}
         />
 
-        <RadioGroup
-          groupDescription="isSentenced"
-          options={yesNoOptions}
-          register={register("isSentenced")}
-        />
+        <RadioGroup groupDescription="isSentenced" options={yesNoOptions} register={register('isSentenced')} />
         <RadioGroup
           groupDescription="hasLiabilitiesResulting"
           options={yesNoOptions}
-          register={register("hasLiabilitiesResulting")}
+          register={register('hasLiabilitiesResulting')}
         />
-        <button onClick={handleSubmit(readPdfTemplateAndFill)}>
-          {isProcessing ? "processing..." : "fill pdf"}
-        </button>
+        <button onClick={handleSubmit(readPdfTemplateAndFill)}>{isProcessing ? 'processing...' : 'fill pdf'}</button>
       </form>
     </div>
   );

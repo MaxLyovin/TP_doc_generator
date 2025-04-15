@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 
-import { ArcionButtonContent } from "./ArcionButtonContent";
+import { ArcionButtonContent } from './ArcionButtonContent';
 
 type ActionButtonProps = {
   isActive: boolean;
@@ -25,15 +25,8 @@ export const ActionButton = ({
   const isButtonVisible = true;
 
   return (
-    <Button
-      className={isButtonVisible ? "visible" : "invisible"}
-      variant="outline"
-      onClick={action}
-    >
-      <ArcionButtonContent
-        isIntroduction={isIntroduction}
-        shouldShowContinueButton={shouldShowContinueButton}
-      />
+    <Button className={isButtonVisible ? 'visible' : 'invisible'} variant="outline" onClick={action}>
+      <ArcionButtonContent isIntroduction={isIntroduction} shouldShowContinueButton={shouldShowContinueButton} />
     </Button>
   );
 };
