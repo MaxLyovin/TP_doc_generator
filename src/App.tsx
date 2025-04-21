@@ -1,16 +1,16 @@
-import "./App.css";
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { UserDataForm } from "./UserDataForm/UserDataForm";
-import { Navigation } from "./components/navigation/Navigation";
-import { UserDataContextProvider } from "./state/providers/UserDataContextProvider/UserDataContextProvider";
+import { UserDataForm } from '@/UserDataForm/UserDataForm';
+import { Landing } from '@/components/Landing/Landing';
 
-function App() {
+export const App = () => {
   return (
-    <UserDataContextProvider>
-      <Navigation />
-      <UserDataForm />
-    </UserDataContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/form" element={<UserDataForm />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
-
-export default App;
+};
