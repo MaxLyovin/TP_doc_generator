@@ -25,7 +25,11 @@ export const ActionButton = ({
   const isButtonVisible = true;
 
   return (
-    <Button className={isButtonVisible ? 'visible' : 'invisible'} variant="outline" onClick={action}>
+    <Button
+      className={`${isButtonVisible ? 'visible' : 'invisible'} w-full md:w-auto`}
+      variant="outline"
+      onClick={action}
+    >
       <ArcionButtonContent isIntroduction={isIntroduction} shouldShowContinueButton={shouldShowContinueButton} />
     </Button>
   );

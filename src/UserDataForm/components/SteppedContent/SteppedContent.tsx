@@ -1,5 +1,4 @@
 import { useStepper } from '@/state/hooks/useStepper';
-import { useSwipe } from '@/hooks/useSwipe';
 import { StepIndex } from '@/UserDataForm/steps';
 
 import { SubmittionInformationForm } from './components/SubmittionInformationForm/SubmittionInformationForm';
@@ -12,15 +11,7 @@ import { StayInPolandDetaisForm } from './components/StayInPolandDetaisForm/Stay
 import { PrevoiusVisits } from './components/PreviousVisits/PrevoiusVisits';
 
 export const SteppedContent = () => {
-  const { activeStep, goToNextStep, goToPreviousStep } = useStepper();
-
-  const { onTouchStart, onTouchMove, onTouchEnd } = useSwipe((direction) => {
-    if (direction === 'left') {
-      goToNextStep();
-    } else {
-      goToPreviousStep();
-    }
-  });
+  const { activeStep } = useStepper();
 
   const renderStep = () => {
     if (activeStep === StepIndex.submittionInformation) {
@@ -62,14 +53,5 @@ export const SteppedContent = () => {
     );
   };
 
-  return (
-    <div
-      className="min-h-[calc(100vh-200px)]"
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
-    >
-      {renderStep()}
-    </div>
-  );
+  return <div>{renderStep()}</div>;
 };

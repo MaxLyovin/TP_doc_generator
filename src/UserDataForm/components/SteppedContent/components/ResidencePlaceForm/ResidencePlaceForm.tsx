@@ -56,37 +56,39 @@ export const ResidencePlaceForm = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <SelectField
-            controllerProps={{ control: form.control, name: "cprVoivodship" }}
-            label={t("main_form.field.province.label")}
+            controllerProps={{ control: form.control, name: 'cprVoivodship' }}
+            label={t('main_form.field.province.label')}
             options={provinceOptions}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "cprCity" }}
-            label={t("main_form.field.city.label")}
+            controllerProps={{ control: form.control, name: 'cprCity' }}
+            label={t('main_form.field.city.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "cprStreet" }}
-            label={t("main_form.field.street.label")}
+            controllerProps={{ control: form.control, name: 'cprStreet' }}
+            label={t('main_form.field.street.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "cprHouseNumber" }}
-            label={t("main_form.field.house_number.label")}
+            controllerProps={{ control: form.control, name: 'cprHouseNumber' }}
+            label={t('main_form.field.house_number.label')}
           />
           <InputField
             controllerProps={{
               control: form.control,
-              name: "cprApartmentNumber",
+              name: 'cprApartmentNumber',
             }}
-            label={t("main_form.field.apartment_number.label")}
+            label={t('main_form.field.apartment_number.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "cprPostalCode" }}
-            label={t("main_form.field.postal_code.label")}
+            controllerProps={{ control: form.control, name: 'cprPostalCode' }}
+            label={t('main_form.field.postal_code.label')}
           />
 
-          <div className="flex justify-between">
+          <div className="flex flex-col md:flex-row gap-4">
             <PreviousStepButton />
-            <Button type="submit">{t("common.next")}</Button>
+            <Button type="submit" className="w-full md:w-auto">
+              {t('common.next')}
+            </Button>
           </div>
         </form>
       </Form>

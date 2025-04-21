@@ -33,9 +33,11 @@ export const PrevoiusVisits = () => {
       <PreviousPolandVisits {...previousPolandVisits} />
       <Separator className="my-8" />
       <TravelsOutsidePoland {...travelsOutsidePoland} />
-      <div className="flex justify-between mt-8">
+      <div className="flex flex-col md:flex-row gap-4">
         <PreviousStepButton />
-        <Button onClick={handleClickNext}>{t("common.next")}</Button>
+        <Button onClick={handleClickNext} className="w-full md:w-auto">
+          {t('common.next')}
+        </Button>
       </div>
     </div>
   );

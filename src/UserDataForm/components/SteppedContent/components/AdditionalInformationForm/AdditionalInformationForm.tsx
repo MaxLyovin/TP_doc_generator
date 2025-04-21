@@ -62,17 +62,19 @@ export const AdditionalInformationForm = () => {
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <SelectField
             options={stayPurposeOptions}
-            controllerProps={{ control: form.control, name: "stayPurpose" }}
-            label={t("main_form.field.stay_purpose.label")}
+            controllerProps={{ control: form.control, name: 'stayPurpose' }}
+            label={t('main_form.field.stay_purpose.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "stayPurposeAdditional" }}
-            label={t("main_form.field.stay_purpose_additional.label")}
+            controllerProps={{ control: form.control, name: 'stayPurposeAdditional' }}
+            label={t('main_form.field.stay_purpose_additional.label')}
             inputProps={{ disabled: !isOtherPurposeSelected }}
           />
-          <div className="flex justify-between">
+          <div className="flex flex-col md:flex-row gap-4">
             <PreviousStepButton />
-            <Button type="submit">{t("common.next")}</Button>
+            <Button type="submit" className="w-full md:w-auto">
+              {t('common.next')}
+            </Button>
           </div>
         </form>
       </Form>

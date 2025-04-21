@@ -42,14 +42,14 @@ export const Landing = () => {
             <p className="text-xl text-gray-600 mb-8">
               Автоматическое заполнение и генерация документов для министерства. Быстро, просто и надежно.
             </p>
-            <div className="flex gap-4 justify-center">
-              <Button size="lg" asChild>
+            <div className="flex flex-col md:flex-row gap-4 justify-center">
+              <Button size="lg" asChild className="w-full md:w-auto">
                 <Link to="/form">
                   Начать заполнение
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="w-full md:w-auto">
                 Узнать больше
               </Button>
             </div>
@@ -105,7 +105,7 @@ export const Landing = () => {
             <p className="text-xl text-gray-600 mb-8">
               Начните заполнение документов прямо сейчас и сэкономьте свое время
             </p>
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="w-full md:w-auto">
               <Link to="/form">
                 Начать заполнение
                 <ArrowRight className="ml-2 h-5 w-5" />

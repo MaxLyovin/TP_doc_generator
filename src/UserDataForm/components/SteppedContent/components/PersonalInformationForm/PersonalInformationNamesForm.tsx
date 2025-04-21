@@ -53,44 +53,46 @@ export const PersonalInformationNamesForm = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <InputField
-            controllerProps={{ control: form.control, name: "surname" }}
-            label={t("main_form.field.previous_surname.label")}
+            controllerProps={{ control: form.control, name: 'surname' }}
+            label={t('main_form.field.previous_surname.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "previousSurname" }}
-            label={t("main_form.field.previous_surname.label")}
+            controllerProps={{ control: form.control, name: 'previousSurname' }}
+            label={t('main_form.field.previous_surname.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "familyName" }}
-            label={t("main_form.field.family_name.label")}
+            controllerProps={{ control: form.control, name: 'familyName' }}
+            label={t('main_form.field.family_name.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "name" }}
-            label={t("main_form.field.name.label")}
+            controllerProps={{ control: form.control, name: 'name' }}
+            label={t('main_form.field.name.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "previousName" }}
-            label={t("main_form.field.previous_name.label")}
+            controllerProps={{ control: form.control, name: 'previousName' }}
+            label={t('main_form.field.previous_name.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "fatherName" }}
-            label={t("main_form.field.father_name.label")}
+            controllerProps={{ control: form.control, name: 'fatherName' }}
+            label={t('main_form.field.father_name.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "motherName" }}
-            label={t("main_form.field.mother_name.label")}
+            controllerProps={{ control: form.control, name: 'motherName' }}
+            label={t('main_form.field.mother_name.label')}
           />
           <InputField
             controllerProps={{
               control: form.control,
-              name: "motherMaidenName",
+              name: 'motherMaidenName',
             }}
-            label={t("main_form.field.mother_maiden_name.label")}
+            label={t('main_form.field.mother_maiden_name.label')}
           />
 
-          <div className="flex justify-between">
+          <div className="flex flex-col md:flex-row gap-4">
             <PreviousStepButton />
-            <Button type="submit">{t("common.next")}</Button>
+            <Button type="submit" className="w-full md:w-auto">
+              {t('common.next')}
+            </Button>
           </div>
         </form>
       </Form>

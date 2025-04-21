@@ -51,44 +51,34 @@ export const PreviousPolandVisits = ({
   return (
     <div>
       <div>
-        <h3 className="font-semibold mb-4">
-          {t("common.previous_poland_stay")}
-        </h3>
+        <h3 className="font-semibold mb-4">{t('common.previous_poland_stay')}</h3>
         <div className="mb-6">
           <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-4 text-start"
-            >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 text-start">
               <InputField
-                controllerProps={{ control: form.control, name: "legalBase" }}
-                label={t(
-                  "main_form.field.previous_poland_stay_legalBase.label"
-                )}
+                controllerProps={{ control: form.control, name: 'legalBase' }}
+                label={t('main_form.field.previous_poland_stay_legalBase.label')}
               />
               <div className="flex gap-4 items-end justify-between">
                 <InputField
-                  controllerProps={{ control: form.control, name: "from" }}
-                  label={t("main_form.field.previous_poland_stay_from.label")}
-                  inputProps={{ type: "date" }}
+                  controllerProps={{ control: form.control, name: 'from' }}
+                  label={t('main_form.field.previous_poland_stay_from.label')}
+                  inputProps={{ type: 'date' }}
                 />
                 <InputField
-                  controllerProps={{ control: form.control, name: "to" }}
-                  label={t("main_form.field.previous_poland_stay_to.label")}
-                  inputProps={{ type: "date" }}
+                  controllerProps={{ control: form.control, name: 'to' }}
+                  label={t('main_form.field.previous_poland_stay_to.label')}
+                  inputProps={{ type: 'date' }}
                 />
-
-                <Button className="grow" type="submit">
-                  {t("common.add")}
-                </Button>
               </div>
+              <Button className="w-full md:w-auto" type="submit">
+                {t('common.add')}
+              </Button>
             </form>
           </Form>
         </div>
       </div>
-      {!!visits.length && (
-        <PolandVisitsTable visits={visits} removeVisit={removeVisit} />
-      )}
+      {!!visits.length && <PolandVisitsTable visits={visits} removeVisit={removeVisit} />}
     </div>
   );
 };
