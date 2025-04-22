@@ -1,19 +1,14 @@
-import { useTranslation } from "react-i18next";
+import { Separator } from '@/components/ui/separator';
+import { useUserData } from '@/state/hooks/useUserData';
+import { useStepper } from '@/state/hooks/useStepper';
+import { NavigationButtons } from '@/components/NavigationButtons/NavigationButtons';
 
-import { PreviousStepButton } from "@/components/PreviousStepButton/PreviousStepButton";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
-import { useUserData } from "@/state/hooks/useUserData";
-import { useStepper } from "@/state/hooks/useStepper";
-
-import { PreviousPolandVisits } from "./components/PreviousPolandVisits";
-import { TravelsOutsidePoland } from "./components/TravelsOutsidePoland";
-import { usePreviousPolandVisits } from "./components/PreviousPolandVisits/hooks/usePreviousPolandVisits";
-import { useTravelsOutsidePoland } from "./components/TravelsOutsidePoland/hooks/useTravelsOutsidePoland";
-
+import { PreviousPolandVisits } from './components/PreviousPolandVisits';
+import { TravelsOutsidePoland } from './components/TravelsOutsidePoland';
+import { usePreviousPolandVisits } from './components/PreviousPolandVisits/hooks/usePreviousPolandVisits';
+import { useTravelsOutsidePoland } from './components/TravelsOutsidePoland/hooks/useTravelsOutsidePoland';
 
 export const PrevoiusVisits = () => {
-  const { t } = useTranslation();
   const { goToNextStep } = useStepper();
   const { setUserData } = useUserData();
   const previousPolandVisits = usePreviousPolandVisits();
@@ -33,12 +28,7 @@ export const PrevoiusVisits = () => {
       <PreviousPolandVisits {...previousPolandVisits} />
       <Separator className="my-8" />
       <TravelsOutsidePoland {...travelsOutsidePoland} />
-      <div className="flex flex-col md:flex-row gap-4">
-        <PreviousStepButton />
-        <Button onClick={handleClickNext} className="w-full md:w-auto">
-          {t('common.next')}
-        </Button>
-      </div>
+      <NavigationButtons onNext={handleClickNext} />
     </div>
   );
 };

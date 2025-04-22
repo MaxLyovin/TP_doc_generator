@@ -10,6 +10,7 @@ import { PreviousStepButton } from '@/components/PreviousStepButton/PreviousStep
 import { useUserData } from '@/state/hooks/useUserData';
 import { sexOptions } from '@/constants/options';
 import { useStepper } from '@/state/hooks/useStepper';
+import { NavigationButtons } from '@/components/NavigationButtons/NavigationButtons';
 
 const formSchema = z.object({
   birthday: z.string(),
@@ -105,12 +106,7 @@ export const PersonalInformationDetailsForm = () => {
             controllerProps={{ control: form.control, name: 'pesel' }}
             label={t('main_form.field.pesel.label')}
           />
-          <div className="flex flex-col md:flex-row gap-4">
-            <PreviousStepButton />
-            <Button type="submit" className="w-full md:w-auto">
-              {t('common.next')}
-            </Button>
-          </div>
+          <NavigationButtons nextButtonType="submit" />
         </form>
       </Form>
     </div>

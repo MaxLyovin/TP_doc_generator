@@ -4,14 +4,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
-import { Form } from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
-import { InputField, SelectField } from "@/components/form";
-import { PreviousStepButton } from "@/components/PreviousStepButton/PreviousStepButton";
-import { useUserData } from "@/state/hooks/useUserData";
-import { stayPurposes } from "@/constants/options";
-import { useStepper } from "@/state/hooks/useStepper";
-
+import { Form } from '@/components/ui/form';
+import { InputField, SelectField } from '@/components/form';
+import { useUserData } from '@/state/hooks/useUserData';
+import { stayPurposes } from '@/constants/options';
+import { useStepper } from '@/state/hooks/useStepper';
+import { NavigationButtons } from '@/components/NavigationButtons/NavigationButtons';
 
 const formSchema = z.object({
   stayPurpose: z.string(),
@@ -28,7 +26,7 @@ export const AdditionalInformationForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       stayPurpose: userData?.stayPurpose,
-      stayPurposeAdditional: userData?.stayPurposeAdditional
+      stayPurposeAdditional: userData?.stayPurposeAdditional,
     },
   });
 
@@ -43,7 +41,7 @@ export const AdditionalInformationForm = () => {
   const stayPurposeOptions = stayPurposes.map((purpose) => ({
     value: purpose,
     label: t(`stayPurpose.${purpose}`),
-  }))
+  }));
 
   const watchStayPurpose = form.watch('stayPurpose');
 
@@ -52,9 +50,7 @@ export const AdditionalInformationForm = () => {
     const isLastOptionSelected = watchStayPurpose === lastOption;
 
     setIsOtherPurposeSelected(isLastOptionSelected);
-
   }, [watchStayPurpose, stayPurposeOptions, form]);
-
 
   return (
     <div>
@@ -70,12 +66,7 @@ export const AdditionalInformationForm = () => {
             label={t('main_form.field.stay_purpose_additional.label')}
             inputProps={{ disabled: !isOtherPurposeSelected }}
           />
-          <div className="flex flex-col md:flex-row gap-4">
-            <PreviousStepButton />
-            <Button type="submit" className="w-full md:w-auto">
-              {t('common.next')}
-            </Button>
-          </div>
+          <NavigationButtons nextButtonType="submit" />
         </form>
       </Form>
     </div>

@@ -1,14 +1,15 @@
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useTranslation } from "react-i18next";
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslation } from 'react-i18next';
 
-import { Form } from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
-import { InputField } from "@/components/form";
-import { PreviousStepButton } from "@/components/PreviousStepButton/PreviousStepButton";
-import { useUserData } from "@/state/hooks/useUserData";
-import { useStepper } from "@/state/hooks/useStepper";
+import { Form } from '@/components/ui/form';
+import { Button } from '@/components/ui/button';
+import { InputField } from '@/components/form';
+import { PreviousStepButton } from '@/components/PreviousStepButton/PreviousStepButton';
+import { useUserData } from '@/state/hooks/useUserData';
+import { useStepper } from '@/state/hooks/useStepper';
+import { NavigationButtons } from '@/components/NavigationButtons/NavigationButtons';
 
 const formSchema = z.object({
   email: z.string(),
@@ -41,17 +42,14 @@ export const ContactsForm = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <InputField
-            controllerProps={{ control: form.control, name: "email" }}
-            label={t("main_form.field.email.label")}
+            controllerProps={{ control: form.control, name: 'email' }}
+            label={t('main_form.field.email.label')}
           />
           <InputField
-            controllerProps={{ control: form.control, name: "phone" }}
-            label={t("main_form.field.phone.label")}
+            controllerProps={{ control: form.control, name: 'phone' }}
+            label={t('main_form.field.phone.label')}
           />
-          <div className="flex justify-between">
-            <PreviousStepButton />
-            <Button type="submit">{t("common.next")}</Button>
-          </div>
+          <NavigationButtons nextButtonType="submit" />
         </form>
       </Form>
     </div>

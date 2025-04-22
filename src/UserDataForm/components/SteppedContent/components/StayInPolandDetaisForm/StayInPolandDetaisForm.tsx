@@ -16,6 +16,7 @@ import {
   yesNoOptions as baseYesNoOptions,
   legalBaseForStayingOptions as baseLegalBaseForStayingOptions,
 } from '@/constants/options';
+import { NavigationButtons } from '@/components/NavigationButtons/NavigationButtons';
 
 const formSchema = z.object({
   stayPurpose: z.string(),
@@ -104,12 +105,7 @@ export const StayInPolandDetaisForm = () => {
             options={legalBaseForStayingOptions}
           />
 
-          <div className="flex justify-between">
-            <PreviousStepButton />
-            <Button type="submit" className="w-full md:auto">
-              {t('common.next')}
-            </Button>
-          </div>
+          <NavigationButtons nextButtonType="submit" />
         </form>
       </Form>
     </div>
