@@ -19,6 +19,8 @@ export type UserData = Partial<{
   nationality: string;
   citizenship: string;
   martialStatus: string;
+  education: string;
+  height: string;
   colourOfEyes: string;
   specialMarks: string;
   pesel: string;
