@@ -2,6 +2,7 @@ import { Visit } from '@/UserDataForm/components/SteppedContent/components/Previ
 import { Travel } from '@/UserDataForm/components/SteppedContent/components/PreviousVisits/components/TravelsOutsidePoland/TravelsOutsidePoland';
 
 export type UserData = Partial<{
+  submitDate: string;
   submitPlace: string;
   submitAuthority: string;
   surname: string;
