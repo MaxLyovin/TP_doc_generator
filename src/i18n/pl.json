@@ -29,6 +29,8 @@
   "common.legalBase": "Podstawa prawna",
   "common.action": "Akcja",
   "common.attachments": "Załączniki:",
+  "common.generate_document": "Zgenerować {{document}}",
+  "common.application_form": "Wniosek",
   "main_form.step.submittion_information": "Podstawowe dane",
   "main_form.step.personal_information_names": "Personal information: names",
   "main_form.step.personal_information_details": "Personal information: details",

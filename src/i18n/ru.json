@@ -29,6 +29,8 @@
   "common.legalBase": "ru_legal_base",
   "common.action": "ru_action",
   "common.attachments": "ru_attachments",
+  "common.generate_document": "ru_generate_document",
+  "common.application_form": "ru_application_form",
   "main_form.step.submittion_information": "ru_submittion_information",
   "main_form.step.personal_information_names": "Personal information: names",
   "main_form.step.personal_information_details": "Personal information: details",

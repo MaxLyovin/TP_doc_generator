@@ -29,6 +29,8 @@
   "common.legalBase": "Legal base",
   "common.action": "Action",
   "common.attachments": "Attachments:",
+  "common.generate_document": "Generate {{document}}",
+  "common.application_form": "Application form",
   "main_form.step.submittion_information": "Submission information",
   "main_form.step.personal_information_names": "Personal information: names",
   "main_form.step.personal_information_details": "Personal information: details",
