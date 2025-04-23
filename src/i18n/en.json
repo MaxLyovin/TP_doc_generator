@@ -100,6 +100,7 @@
   "main_form.field.subjec_of_criminal_description.label": "Proceedings description",
   "main_form.field.has_liabilities_resulting.label": "Do you have any liabilities resulting from verdicts of courts, resolutions or administrative decisions, including alimony, in the territory of the Republic of Poland or abroad?",
   "main_form.field.liabilities_resulting_description.label": "Liabilities description",
+  "main_form.field.attachments.label": "Attachment",
   "province.zachodniopomorskie": "Zachodniopomorskie",
   "province.pomorskie": "Pomorskie",
   "province.warminskoMazurskie": "Warmińsko-Mazurskie",

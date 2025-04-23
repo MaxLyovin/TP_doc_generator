@@ -100,6 +100,7 @@
   "main_form.field.subjec_of_criminal_description.label": "ru_label",
   "main_form.field.has_liabilities_resulting.label": "Обременяют ли Вас обязательства, возникающие из судебных решений, постановлений, административных решений, в том числе, алиментные обязательства, на территории Республики Польша или за пределами этой территории?",
   "main_form.field.liabilities_resulting_description.label": "ru_label",
+  "main_form.field.attachments.label": "ru_attachments",
   "province.zachodniopomorskie": "Zachodniopomorskie",
   "province.pomorskie": "Pomorskie",
   "province.warminskoMazurskie": "Warmińsko-Mazurskie",

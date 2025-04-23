@@ -100,6 +100,7 @@
   "main_form.field.subjec_of_criminal_description.label": "Opis postępowania",
   "main_form.field.has_liabilities_resulting.label": "Czy ciążą na Panu (-i) zobowiązania wynikające z orzeczeń sądowych, postanowień i decyzji administracyjnych, w tym zobowiązania alimentacyjne, na terytorium Rzeczypospolitej Polskiej lub poza tym terytorium?",
   "main_form.field.liabilities_resulting_description.label": "Opis zobowiązań",
+  "main_form.field.attachments.label": "Załącznik",
   "province.zachodniopomorskie": "Zachodniopomorskie",
   "province.pomorskie": "Pomorskie",
   "province.warminskoMazurskie": "Warmińsko-Mazurskie",
