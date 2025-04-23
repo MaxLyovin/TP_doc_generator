@@ -37,7 +37,7 @@ export type UserData = Partial<{
   stayPurposeAdditional: string;
   familyMemebers: FamilyMember[];
   isCurrentlyInPoland: string;
-  lastEntryIntoPoland: string;
+  lastEntryIntoPolandDate: string;
   legalBasisForStaying: string;
   previousVisitsPoland: Visit[];
   travelsOutsidePoland: Travel[];

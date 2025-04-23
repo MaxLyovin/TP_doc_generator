@@ -88,9 +88,7 @@ export const dataMapWithMeta: Record<string, CellMeta> = {
 
   previousVisitsPoland: { shortName: '', cellsAmount: 1 },
   isCurrentlyInPoland: { shortName: '', cellsAmount: 2, type: 'select' },
-  lastEntryIntoPolandYear: { shortName: '', cellsAmount: 4 },
-  lastEntryIntoPolandMonth: { shortName: '', cellsAmount: 2 },
-  lastEntryIntoPolandDay: { shortName: '', cellsAmount: 2 },
+  lastEntryIntoPolandDate: { shortName: '', cellsAmount: 0, type: 'date' },
   legalBasisForStaying: { shortName: '', cellsAmount: 4, type: 'select' },
   travelsOutsidePoland: { shortName: '', cellsAmount: 1 },
   meansOfSubstence: { shortName: '', cellsAmount: 1 },
