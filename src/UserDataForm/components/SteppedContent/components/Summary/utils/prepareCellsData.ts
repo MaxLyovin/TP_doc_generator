@@ -58,7 +58,11 @@ export const prepareCellsData = ({
 
     const splitedValue = value.split('');
 
-    for (let index = docFieldMeta.type === 'select' ? 1 : 0; index < docFieldMeta.cellsAmount; index++) {
+    for (
+      let index = docFieldMeta.type === 'select' ? 1 : 0;
+      docFieldMeta.type === 'select' ? index <= docFieldMeta.cellsAmount : index < docFieldMeta.cellsAmount;
+      index++
+    ) {
       const cellName = getCellName(shouldTransformToShort ? docFieldMeta.shortName : nameBase, index);
 
       if (docFieldMeta.type === 'select') {

@@ -17,11 +17,11 @@ const formSchema = z.object({
   medicalInsurance: z.string(),
   clauseDLRS: z.string(),
   isSentenced: z.string(),
-  sentencedDescription: z.string(),
+  sentencedDescription: z.string().optional(),
   isSubjectOfCriminal: z.string(),
-  subjectOfCriminalDescription: z.string(),
+  subjectOfCriminalDescription: z.string().optional(),
   hasLiabilitiesResulting: z.string(),
-  liabilitiesResultingDescription: z.string(),
+  liabilitiesResultingDescription: z.string().optional(),
 });
 
 export const AdditionalInformationForm = () => {
