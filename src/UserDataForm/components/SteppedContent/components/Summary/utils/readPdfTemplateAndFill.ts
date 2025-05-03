@@ -8,6 +8,7 @@ import { UserData } from '@/@types/userData';
 
 import { prepareCellsData } from './prepareCellsData';
 import { transformUserDataForApplicationForm } from './transformUserDataForApplicationForm';
+import { getDocumentName } from './getDocumentName';
 
 export const readPdfTemplateAndFill = async (userData: UserData) => {
   const pdfBaseBytes = await fetch(pdfBase).then((res) => res.arrayBuffer());
@@ -34,5 +35,5 @@ export const readPdfTemplateAndFill = async (userData: UserData) => {
     }
   });
 
-  download(await pdfDoc.save(), 'filledPdf.pdf', 'application/pdf');
+  download(await pdfDoc.save(), getDocumentName(userData.name, userData.surname), 'application/pdf');
 };
