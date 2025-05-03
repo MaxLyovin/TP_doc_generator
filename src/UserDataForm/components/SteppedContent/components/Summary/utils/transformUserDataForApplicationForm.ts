@@ -15,5 +15,6 @@ export const transformUserDataForApplicationForm = (data: UserData) => {
     ...transformedAttachmentsList,
     previousVisitsPoland: transformPreviousVisitsPoland(data.previousVisitsPoland ?? []),
     travelsOutsidePoland: transformTravelsOutsidePoland(data.travelsOutsidePoland ?? []),
+    signatureDate: data.submitDate,
   };
 };

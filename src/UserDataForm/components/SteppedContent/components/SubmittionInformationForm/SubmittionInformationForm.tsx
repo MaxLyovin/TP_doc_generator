@@ -55,6 +55,7 @@ export const SubmittionInformationForm = () => {
           <InputField
             controllerProps={{ control: form.control, name: 'submitDate' }}
             label={t('main_form.field.submit_date.label')}
+            inputProps={{ type: 'date' }}
           />
           <InputField
             controllerProps={{ control: form.control, name: 'submitPlace' }}

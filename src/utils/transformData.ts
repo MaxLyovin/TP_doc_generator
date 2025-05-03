@@ -7,6 +7,7 @@ type CellMeta = {
 
 export const dataMapWithMeta: Record<string, CellMeta> = {
   submitDate: { shortName: '', cellsAmount: 0, type: 'date' },
+  signatureDate: { shortName: '', cellsAmount: 0, type: 'date' },
   submitPlace: { shortName: '', cellsAmount: 1 },
   submitAuthority: { shortName: '', cellsAmount: 1 },
   surname: { shortName: 'A.S', cellsAmount: 20 },
