@@ -1,5 +1,4 @@
 import fontkit from '@pdf-lib/fontkit';
-import download from 'downloadjs';
 import { PDFDocument } from 'pdf-lib';
 
 import pdfBase from '@/assets/pdf/templates/wniosekZC_template.pdf';
@@ -8,7 +7,6 @@ import { UserData } from '@/@types/userData';
 
 import { prepareCellsData } from './prepareCellsData';
 import { transformUserDataForApplicationForm } from './transformUserDataForApplicationForm';
-import { getDocumentName } from './getDocumentName';
 
 export const readPdfTemplateAndFill = async (userData: UserData) => {
   const pdfBaseBytes = await fetch(pdfBase).then((res) => res.arrayBuffer());
@@ -35,5 +33,7 @@ export const readPdfTemplateAndFill = async (userData: UserData) => {
     }
   });
 
-  download(await pdfDoc.save(), getDocumentName(userData.name, userData.surname), 'application/pdf');
+  const doc = await pdfDoc.save();
+
+  return new Blob([doc], { type: 'application/pdf' });
 };
