@@ -1,9 +1,9 @@
-import { GenerateApplicationForm } from './components/GenerateApplicationForm';
+import { useUserData } from '@/state/hooks/useUserData';
+
+import { ApplicationForm } from './components/ApplicationForm';
 
 export const Summary = () => {
-  return (
-    <div>
-      <GenerateApplicationForm />
-    </div>
-  );
+  const { userData } = useUserData();
+
+  return <div>{userData && <ApplicationForm userData={userData} />}</div>;
 };
