@@ -35,7 +35,7 @@ export const AttachmentForm = ({ addAttachment }: AttachmentFormProps) => {
         <div className="flex flex-col gap-4">
           <InputField
             controllerProps={{ control: form.control, name: 'attachment' }}
-            label={t('main_form.field.medical_insurance.label')}
+            label={t('main_form.field.attachments.label')}
           />
           <Button type="submit">{t('common.add')}</Button>
         </div>

@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useUserData } from '@/state/hooks/useUserData';
+import { PreviousStepButton } from '@/components/PreviousStepButton/PreviousStepButton';
+import { Button } from '@/components/ui/button';
+import { useStepper } from '@/state/hooks/useStepper';
 
 import { AttachmentForm } from './components/AttachmentForm';
 import { AttachmentList } from './components/AttachmentList';
@@ -9,6 +12,7 @@ import { AttachmentList } from './components/AttachmentList';
 export const Attachments = () => {
   const { t } = useTranslation();
   const { userData, setUserData } = useUserData();
+  const { goToNextStep } = useStepper();
   const [attachmentsList, setAttachmentsList] = useState<string[]>(userData?.attachmentsList ?? []);
 
   const addAttachment = (attachment: string) => setAttachmentsList((prev) => [...prev, attachment]);
@@ -28,6 +32,10 @@ export const Attachments = () => {
       <AttachmentForm addAttachment={addAttachment} />
       <div className="mt-8">
         <AttachmentList attachmentsList={attachmentsList} removeAttachment={removeAttachment} />
+      </div>
+      <div className="flex justify-between mt-8">
+        <PreviousStepButton />
+        <Button onClick={goToNextStep}>{t('common.next')}</Button>
       </div>
     </div>
   );

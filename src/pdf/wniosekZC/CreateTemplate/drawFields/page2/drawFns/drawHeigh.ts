@@ -1,6 +1,6 @@
-import { PDFPage, PDFForm } from "pdf-lib";
+import { PDFPage, PDFForm } from 'pdf-lib';
 
-import { addCellFields } from "../../../../../utils/addCellFields";
+import { addCellFields } from '../../../../../utils/addCellFields';
 
 export const drawHeight = (page: PDFPage, form: PDFForm) => {
   addCellFields({
@@ -10,6 +10,6 @@ export const drawHeight = (page: PDFPage, form: PDFForm) => {
     dimension: 14,
     cellsAmount: 3,
     cellsSpacing: 18,
-    nameBase: "heigh",
+    nameBase: 'height',
   });
 };

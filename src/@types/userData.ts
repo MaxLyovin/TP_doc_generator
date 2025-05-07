@@ -2,6 +2,7 @@ import { Visit } from '@/UserDataForm/components/SteppedContent/components/Previ
 import { Travel } from '@/UserDataForm/components/SteppedContent/components/PreviousVisits/components/TravelsOutsidePoland/TravelsOutsidePoland';
 
 export type UserData = Partial<{
+  submitDate: string;
   submitPlace: string;
   submitAuthority: string;
   surname: string;
@@ -19,6 +20,8 @@ export type UserData = Partial<{
   nationality: string;
   citizenship: string;
   martialStatus: string;
+  education: string;
+  height: string;
   colourOfEyes: string;
   specialMarks: string;
   pesel: string;
@@ -34,7 +37,7 @@ export type UserData = Partial<{
   stayPurposeAdditional: string;
   familyMemebers: FamilyMember[];
   isCurrentlyInPoland: string;
-  lastEntryIntoPoland: string;
+  lastEntryIntoPolandDate: string;
   legalBasisForStaying: string;
   previousVisitsPoland: Visit[];
   travelsOutsidePoland: Travel[];

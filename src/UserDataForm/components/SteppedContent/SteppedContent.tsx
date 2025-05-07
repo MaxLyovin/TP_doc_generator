@@ -12,6 +12,7 @@ import { StayInPolandDetaisForm } from './components/StayInPolandDetaisForm/Stay
 import { PrevoiusVisits } from './components/PreviousVisits/PrevoiusVisits';
 import { AdditionalInformationForm } from './components/AdditionalInformationForm/AdditionalInformationForm';
 import { Attachments } from './components/Attachments/Attachments';
+import { Summary } from './components/Summary/Summary';
 
 const Buttons = () => {
   const { goToNextStep, goToPreviousStep } = useStepper();
@@ -64,6 +65,10 @@ export const SteppedContent = () => {
 
   if (activeStep === StepIndex.attachments) {
     return <Attachments />;
+  }
+
+  if (activeStep === StepIndex.summary) {
+    return <Summary />;
   }
 
   return (

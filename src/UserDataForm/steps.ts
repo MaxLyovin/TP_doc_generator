@@ -12,6 +12,7 @@ export enum StepIndex {
   familyMembers = 8,
   additionalInformation = 9,
   attachments = 10,
+  summary = 11,
 }
 
 const stepsTranslations: Record<StepIndex, TranslationKey> = {
@@ -26,6 +27,7 @@ const stepsTranslations: Record<StepIndex, TranslationKey> = {
   [StepIndex.familyMembers]: 'main_form.step.family_members',
   [StepIndex.additionalInformation]: 'main_form.step.additional_information',
   [StepIndex.attachments]: 'main_form.step.attachments',
+  [StepIndex.summary]: 'main_form.step.summary',
 };
 
 export const steps: TranslationKey[] = Object.values(stepsTranslations);
