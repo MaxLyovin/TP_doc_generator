@@ -1,6 +1,6 @@
-import { PDFPage, PDFForm } from "pdf-lib";
+import { PDFPage, PDFForm } from 'pdf-lib';
 
-import { addCellFields } from "../../../../../utils/addCellFields";
+import { addCellFields } from '../../../../../utils/addCellFields';
 
 export const drawHasLiabilitiesResulting = (page: PDFPage, form: PDFForm) => {
   addCellFields({
@@ -10,7 +10,7 @@ export const drawHasLiabilitiesResulting = (page: PDFPage, form: PDFForm) => {
     dimension: 16,
     cellsAmount: 1,
     cellsSpacing: 18,
-    nameBase: "hasLiabilitiesResulting_1",
+    nameBase: 'hasLiabilitiesResulting_1',
   });
 
   addCellFields({
@@ -20,6 +20,6 @@ export const drawHasLiabilitiesResulting = (page: PDFPage, form: PDFForm) => {
     dimension: 16,
     cellsAmount: 1,
     cellsSpacing: 18,
-    nameBase: "ihasLiabilitiesResulting_2",
+    nameBase: 'hasLiabilitiesResulting_2',
   });
 };

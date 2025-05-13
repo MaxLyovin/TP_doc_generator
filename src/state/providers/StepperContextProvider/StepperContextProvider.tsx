@@ -1,20 +1,18 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { StepperContext } from "@/state/contexts/StepperContext/StepperContext";
+import { StepperContext } from '@/state/contexts/StepperContext/StepperContext';
+import { StepIndex } from '@/UserDataForm/steps';
 
 type StepperContextProviderProps = {
   children: React.ReactNode;
   shouldSkipIntoduction: boolean;
 };
 
-export const StepperContextProvider = ({
-  children,
-}: StepperContextProviderProps) => {
-  const [activeStep, setActiveStep] = useState(6);
-  const [lastCompletedStep, setLastCompletedStep] = useState(6);
+export const StepperContextProvider = ({ children }: StepperContextProviderProps) => {
+  const [activeStep, setActiveStep] = useState(StepIndex.introduction);
+  const [lastCompletedStep, setLastCompletedStep] = useState(activeStep);
   const nextToComplete = lastCompletedStep + 1;
-  const isBrokenSequence =
-    activeStep <= lastCompletedStep && lastCompletedStep > 0;
+  const isBrokenSequence = activeStep <= lastCompletedStep && lastCompletedStep > 0;
 
   const goToNextStep = () => {
     if (!isBrokenSequence) {

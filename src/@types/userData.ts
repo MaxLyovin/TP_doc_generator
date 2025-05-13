@@ -1,7 +1,8 @@
-import { Visit } from "@/UserDataForm/components/SteppedContent/components/PreviousVisits/components/PreviousPolandVisits/PreviousPolandVisits";
-import { Travel } from "@/UserDataForm/components/SteppedContent/components/PreviousVisits/components/TravelsOutsidePoland/TravelsOutsidePoland";
+import { Visit } from '@/UserDataForm/components/SteppedContent/components/PreviousVisits/components/PreviousPolandVisits/PreviousPolandVisits';
+import { Travel } from '@/UserDataForm/components/SteppedContent/components/PreviousVisits/components/TravelsOutsidePoland/TravelsOutsidePoland';
 
 export type UserData = Partial<{
+  submitDate: string;
   submitPlace: string;
   submitAuthority: string;
   surname: string;
@@ -19,6 +20,8 @@ export type UserData = Partial<{
   nationality: string;
   citizenship: string;
   martialStatus: string;
+  education: string;
+  height: string;
   colourOfEyes: string;
   specialMarks: string;
   pesel: string;
@@ -30,24 +33,34 @@ export type UserData = Partial<{
   cprHouseNumber: string;
   cprApartmentNumber: string;
   cprPostalCode: string;
-  stayPurpose: string
-  stayPurposeAdditional: string
-  familyMemebers: FamilyMember[]
+  stayPurpose: string;
+  stayPurposeAdditional: string;
+  familyMemebers: FamilyMember[];
   isCurrentlyInPoland: string;
-  lastEntryIntoPoland: string;
+  lastEntryIntoPolandDate: string;
   legalBasisForStaying: string;
   previousVisitsPoland: Visit[];
   travelsOutsidePoland: Travel[];
+  meansOfSubstence: string;
+  medicalInsurance: string;
+  clauseDLRS: string;
+  isSentenced: string;
+  sentencedDescription: string;
+  isSubjectOfCriminal: string;
+  subjectOfCriminalDescription: string;
+  hasLiabilitiesResulting: string;
+  liabilitiesResultingDescription: string;
+  attachmentsList: string[];
 }>;
 
 export type FamilyMember = {
-  id: string
-  name: string
-  sex: string
+  id: string;
+  name: string;
+  sex: string;
   birthday: string;
-  kinship: string
+  kinship: string;
   citizenship: string;
-  residencePlace: string
-  isApplying: string
-  isDependent: string
-}
+  residencePlace: string;
+  isApplying: string;
+  isDependent: string;
+};

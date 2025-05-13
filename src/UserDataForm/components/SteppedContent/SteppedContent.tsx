@@ -10,6 +10,9 @@ import { ResidencePlaceForm } from './components/ResidencePlaceForm/ResidencePla
 import { FamilyMembersForm } from './components/FamilyMembers/FamilyMembersForm';
 import { StayInPolandDetaisForm } from './components/StayInPolandDetaisForm/StayInPolandDetaisForm';
 import { PrevoiusVisits } from './components/PreviousVisits/PrevoiusVisits';
+import { AdditionalInformationForm } from './components/AdditionalInformationForm/AdditionalInformationForm';
+import { Attachments } from './components/Attachments/Attachments';
+import { Summary } from './components/Summary/Summary';
 
 export const SteppedContent = () => {
   const { activeStep, goToNextStep, goToPreviousStep } = useStepper();
@@ -61,6 +64,18 @@ export const SteppedContent = () => {
       </div>
     );
   };
+
+  if (activeStep === StepIndex.additionalInformation) {
+    return <AdditionalInformationForm />;
+  }
+
+  if (activeStep === StepIndex.attachments) {
+    return <Attachments />;
+  }
+
+  if (activeStep === StepIndex.summary) {
+    return <Summary />;
+  }
 
   return (
     <div
