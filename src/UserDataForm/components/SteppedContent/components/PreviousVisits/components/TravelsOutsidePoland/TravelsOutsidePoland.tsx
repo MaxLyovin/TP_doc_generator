@@ -1,14 +1,13 @@
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslation } from 'react-i18next';
 
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useTranslation } from "react-i18next";
+import { Form } from '@/components/ui/form';
+import { InputField } from '@/components/form';
+import { Button } from '@/components/ui/button';
 
-import { Form } from "@/components/ui/form";
-import { InputField } from "@/components/form";
-import { Button } from "@/components/ui/button";
-
-import { TravelsOutsidePolandTable } from "./TravelsOutsidePolandTable";
+import { TravelsOutsidePolandTable } from './TravelsOutsidePolandTable';
 
 const formSchema = z.object({
   from: z.string(),
@@ -28,11 +27,7 @@ type TravelsOutsidePolandProps = {
   removeTravel: (travelIndex: number) => void;
 };
 
-export const TravelsOutsidePoland = ({
-  travels,
-  addTravel,
-  removeTravel,
-}: TravelsOutsidePolandProps) => {
+export const TravelsOutsidePoland = ({ travels, addTravel, removeTravel }: TravelsOutsidePolandProps) => {
   const { t } = useTranslation();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -51,45 +46,35 @@ export const TravelsOutsidePoland = ({
   return (
     <div>
       <div>
-        <h3 className="font-semibold mb-4">
-          {t("travels_outside_poland.header")}
-        </h3>
+        <h3 className="font-semibold mb-4">{t('travels_outside_poland.header')}</h3>
         <div className="mb-6">
           <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-4 text-start"
-            >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 text-start">
               <InputField
-                controllerProps={{ control: form.control, name: "country" }}
-                label={t("travels_outside_poland.field.country.label")}
+                controllerProps={{ control: form.control, name: 'country' }}
+                label={t('travels_outside_poland.field.country.label')}
               />
-              <div className="flex gap-4 items-end justify-between">
+              <div className="flex flex-col gap-4 items-stretch justify-between sm:flex-row sm:items-end">
                 <InputField
-                  controllerProps={{ control: form.control, name: "from" }}
-                  label={t("common.from")}
-                  inputProps={{ type: "date" }}
+                  controllerProps={{ control: form.control, name: 'from' }}
+                  label={t('common.from')}
+                  inputProps={{ type: 'date' }}
                 />
                 <InputField
-                  controllerProps={{ control: form.control, name: "to" }}
-                  label={t("common.to")}
-                  inputProps={{ type: "date" }}
+                  controllerProps={{ control: form.control, name: 'to' }}
+                  label={t('common.to')}
+                  inputProps={{ type: 'date' }}
                 />
 
-                <Button className="grow" type="submit">
-                  {t("common.add")}
+                <Button className="w-full sm:grow" type="submit">
+                  {t('common.add')}
                 </Button>
               </div>
             </form>
           </Form>
         </div>
       </div>
-      {!!travels.length && (
-        <TravelsOutsidePolandTable
-          travels={travels}
-          removeTravel={removeTravel}
-        />
-      )}
+      {!!travels.length && <TravelsOutsidePolandTable travels={travels} removeTravel={removeTravel} />}
     </div>
   );
 };

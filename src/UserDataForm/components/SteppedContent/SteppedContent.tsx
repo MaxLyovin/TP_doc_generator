@@ -1,5 +1,4 @@
 import { useStepper } from '@/state/hooks/useStepper';
-import { Button } from '@/components/ui/button';
 import { StepIndex } from '@/UserDataForm/steps';
 
 import { SubmittionInformationForm } from './components/SubmittionInformationForm/SubmittionInformationForm';
@@ -14,50 +13,48 @@ import { AdditionalInformationForm } from './components/AdditionalInformationFor
 import { Attachments } from './components/Attachments/Attachments';
 import { Summary } from './components/Summary/Summary';
 
-const Buttons = () => {
-  const { goToNextStep, goToPreviousStep } = useStepper();
-
-  return (
-    <div>
-      <Button onClick={goToPreviousStep}>previous</Button>
-      <Button onClick={goToNextStep}>next</Button>
-    </div>
-  );
-};
-
 export const SteppedContent = () => {
   const { activeStep } = useStepper();
 
-  if (activeStep === StepIndex.submittionInformation) {
-    return <SubmittionInformationForm />;
-  }
+  const renderStep = () => {
+    if (activeStep === StepIndex.submittionInformation) {
+      return <SubmittionInformationForm />;
+    }
 
-  if (activeStep === StepIndex.personalInformationNames) {
-    return <PersonalInformationNamesForm />;
-  }
+    if (activeStep === StepIndex.personalInformationNames) {
+      return <PersonalInformationNamesForm />;
+    }
 
-  if (activeStep === StepIndex.personalInformationDetails) {
-    return <PersonalInformationDetailsForm />;
-  }
+    if (activeStep === StepIndex.personalInformationDetails) {
+      return <PersonalInformationDetailsForm />;
+    }
 
-  if (activeStep === StepIndex.contacts) {
-    return <ContactsForm />;
-  }
+    if (activeStep === StepIndex.contacts) {
+      return <ContactsForm />;
+    }
 
-  if (activeStep === StepIndex.residencePlace) {
-    return <ResidencePlaceForm />;
-  }
+    if (activeStep === StepIndex.residencePlace) {
+      return <ResidencePlaceForm />;
+    }
 
-  if (activeStep === StepIndex.familyMembers) {
-    return <FamilyMembersForm />;
-  }
-  if (activeStep === StepIndex.stayInPolandDetails) {
-    return <StayInPolandDetaisForm />;
-  }
+    if (activeStep === StepIndex.familyMembers) {
+      return <FamilyMembersForm />;
+    }
 
-  if (activeStep === StepIndex.previousVisits) {
-    return <PrevoiusVisits />;
-  }
+    if (activeStep === StepIndex.stayInPolandDetails) {
+      return <StayInPolandDetaisForm />;
+    }
+
+    if (activeStep === StepIndex.previousVisits) {
+      return <PrevoiusVisits />;
+    }
+
+    return (
+      <div className="flex flex-col gap-4">
+        <div>Intro</div>
+      </div>
+    );
+  };
 
   if (activeStep === StepIndex.additionalInformation) {
     return <AdditionalInformationForm />;
@@ -71,12 +68,5 @@ export const SteppedContent = () => {
     return <Summary />;
   }
 
-  return (
-    <div className="flex flex-col gap-4">
-      <div>Intro</div>
-      <div>
-        <Buttons />
-      </div>
-    </div>
-  );
+  return <div className="min-h-[calc(100vh-200px)]">{renderStep()}</div>;
 };
